@@ -1,0 +1,76 @@
+\subsection{IaaS controller}
+
+% Need a generic controller which can support any SaaS controller. implicit invocation. d
+%Write 2 lines, why does iaaS controller is needed. d
+% scale-in or scale-out actions are carried out too quickly.
+% only horizontal scaling!
+
+While under-provisioning of resources can significantly hamper QoS properties by saturating application, over-provisioning of resources can increase energy consumption significantly. Therefore, the scaling decision, for instance, add resources (scale-out) or remove resources (scale-in) should be taken carefully to match with the applications resource demand. To meet \emph{scale-out} condition, a reactive policy can be easily designed and implemented based on the monitored performance metrics or listening to predefined appropriate events. A reactive policy is referred to a run-time decision based on current demand and system state - to add resources on the fly. On the contrary, reactive policies can not absorb the non-negligible resource/instance initiation time. In our case, when application starts to face high response time, both the SaaS controllers have the capability to degrade the user experience level and to invoke an implicit event (\texttt{vmAdd}) request to IaaS controller. Therefore, the sequential operation can trigger the application to run at lower mode until the instance is launched and activated. Afterwards, the application revert back to higher mode if it meets the condition after operation.
+
+In contrast, when \emph{scale-in} event (\emph{i.e.,} fewer resources are required by application) is invoked by SaaS controllers, terminating instance based on reactive policy can have detrimental impact on the system. For example, when application performs better by staying just below or borderline to set point, triggering \emph{scale-in} action can make an application suffering from high response time to saturation. One way to overcome the problem is to reduce the number of cpu cores\footnote{In case, CPU is the bottleneck in the application} on the fly by doing fine-grained analysis of resource requirement rather than terminating an entire instance, but popular hypervisors like KVM, VMware, Hyper-V does not allow removing cpu cores of guest VMs at runtime \cite{vertical}.
+Additionally, instance termination can cause a sharp rise in response time reaching beyond the set point if workload's behavior or tendency is not taken into consideration. Therefore, devising a plan when to execute \emph{scale-in} event is critical. On the other hand, if the consecutive scaling actions are carried out too quickly without being able to observe the impact of scaling action to the application, undesirable effects such as over and under-provisioning can occur which can leads to performance degradation and/or wastage of energy consumption.
+  
+%------------- IaaS controller -------------------------
+\begin{algorithm} [!ht]
+\DontPrintSemicolon
+\footnotesize
+\KwIn { $[minVm , maxVm]$ = Minimum and maximum number of VM's. \\
+$[RT_{95} , workload_{inc}]$ = Response time and workload increment sent by SaaS controller. \\
+$[rt_{thr} , decWorkPerc]$ = Two tunable parameters.}
+ 
+\KwOut { $vmNumber$, $coolingPeriod$ } 
+
+\BlankLine 
+%\emph{/* \textcolor{red}{Initiates in longer control period} */}\;
+
+\If {($handleEvent == vmAdd$)} 
+{
+\If  { $(currentTime \notin coolingPeriod) \enspace \land \enspace(vmNumber < maxVm)$ } 
+			     { $triggerAction \rightarrow "scale-out"$ \tcc*[f]{Passing API call through cloud infrastructure manager}\;
+			       $vmNumber+=1$ \;
+			       $coolingPeriod+=coolingLength$ \;
+			       }
+		
+ 			\Else {$vmNumber=this.vmNumber$ \;
+ 			       $coolingPeriod=this.coolingPeriod$ 
+ 			       }
+ 			       $vmNumber = update(vmNumber)$ \;  
+ 			       $coolingPeriod = update(coolingPeriod)$ \;
+ }
+ 
+\Return { $vmNumber$, $coolingPeriod$ } 			      			   
+\BlankLine  
+  
+ \If {($handleEvent == vmRemove$)} 
+ {
+ \If  { $(currentTime \notin coolingPeriod) \enspace\land\enspace(rt_{thr} > RT_{95}) \enspace \land \enspace (vmNumber > minVm) \enspace \land \enspace$ \\ $[(workload_{inc} < decWorkPerc \enspace \lor \enspace Curr_{mode}=0)]$ }
+     
+                   { $triggerAction \rightarrow "scale-in"$ \tcc*[f]{Passing API call through cloud infrastructure manager} \;
+			       $vmNumber-=1$ \;
+			       $coolingPeriod+=coolingLength$ \;
+			       }
+	  
+                  \Else {$vmNumber=this.vmNumber$ \;
+ 			       $coolingPeriod=this.coolingPeriod$ \;
+ 			       }
+ 			       $vmNumber = update(vmNumber)$ \;  
+ 			       $coolingPeriod = update(coolingPeriod)$ \;
+ }
+ 
+\Return { $vmNumber$, $coolingPeriod$ } 
+\caption {Infrastructure controller}
+\label{algo:iaas_controller}
+\end{algorithm}
+%--------------------- END -----------------------------   
+
+Hence, the idea is to built a generic IaaS controller which is characteristically agnostic to SaaS controllers behavior. Whenever, an implicit event invocation (\texttt{vmAdd, vmRemove}) arrives to the controller, it activates the proper module by matching to the event. Since, two non-concurrent events can be invoked by SaaS controllers, our proposed IaaS controller contains two modules to handle each of them. We define a length of period called \emph{coolingLength}, which is composed of instance activation time and the time it requires to impact on the application. Therefore, after triggering any scaling decision, this time period is updated to prevent any scaling decision to be made in between. Hence, when \texttt{vmAdd} event arrives to the controller, the $handleEvent == vmAdd$ module matches the condition of not being at $coolingPeriod$ with an and operator 
+to maximum number of VM's a provider can be assigned to\footnote{Amazon EC2 permits maximum 20 on-demand instances per user.}. If it adheres the condition, \emph{scale-out} decision is triggered via IaaS actuator and current number of VM and next $coolingPeriod$ is updated (see line 3-5 of Algorithm \ref{algo:iaas_controller}). Otherwise, the module ignores the notification. On the other hand, when \texttt{vmRemove} event is invoked by SaaS controller, if the $handleEvent == vmRemove$ module is not carefully designed, cloud application can face unstable phases \emph{i.e.,} sharp rises of response time to saturate application. Therefore, only looking at $coolingPeriod$ and minimum number of VM
+%\footnote{For a 3-tier application, at least one VM per tier should always run.}
+ could be unwise and skeptical. Therefore, we introduce two key parameters which are tunable to identify when is the good time to release resources \emph{i.e.,} perform scale-in action. The parameters are i) how far the current system's response time should be from set point? For example, x\% less than target response time set point, which is denoted by $rt_{thr}$ at Algorithm \ref{algo:iaas_controller}. ii) how much workload rate should decrease from the current trend? For instance, y\% decrease in user requests than previous intervals, denoted by \emph{decWorkPerc}. Hence, when $handleEvent == vmRemove$ arrives to the IaaS controller, the module checks the cooling period, minimum number of VM, current response time condition
+with an AND operator. Additionally we put an OR operator between workload decrease parameter and current mode of the application. The rationale behind that, in the absence of green energy, \emph{GE-C} controller keeps the application at minimum level. Although, workload may be consistent or increasing, if this application controller invokes \texttt{vmRemove} event that matches to be outside of $coolingPeriod$, greater than minimum number of VM and reduced response time than the threshold, it will meet the \emph{scale-in} condition and IaaS controller will trigger the action to release resources. On the other hand, \emph{RT-C} will keep application at the highest mode when resources are slightly to abundantly over-provisioned. Thus, application being at $mode=0$ and decreasing workload by y\% percentage can not happen concurrently if response time is x\% less than response time set point for this type of SaaS controller. Apart from \emph{GE-C}, any SaaS controller which invokes \texttt{vmRemove} event and satisfies all the conditions mentioned above other than application mode being at lowest, will trigger \emph{scale-in} action by IaaS controller.
+
+
+
+%checks if the notification does not exist in coolingPeriod and if it exceeds the maximum amount of VM or not, if not it triggers scale-out action via IaaS actuator. 
+
+%now dive into controller!

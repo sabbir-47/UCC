@@ -1,0 +1,136 @@
+\section{Proposed Controllers}
+
+This section describes several application controller which have been extended to leverage the underlying elasticity and a generic infrastructure controller which can be plugged with any application controller to control the elasticity capability of cloud infrastructure. 
+
+\subsection{Application/SaaS controllers} \label{saas-controller}
+
+% last chapter presents couple of controller. We choose the most performant one, and most energy efficient one with non-adaptive approach.
+
+We have designed and validated several single and mutiple metric application controllers which have the capability to re-configure SaaS application to keep it accessible and performant even at changing conditions at \cite{sabbir},\cite{tsc}. In this article, we extend the Green Energy Controller (quality of resource aware) and Response time controller (performance aware) with increased capability to request of addition/removal of resources from the underlying elastic infrastructure.
+
+
+\paragraph*{\textbf{Response Time controller (RT-C)}}
+Response time is an essential metric to guarantee cloud
+based application's performance. Our goal is to keep response
+time under certain threshold dynamically to maximize the
+availability of the service in unpredictable and variable
+workload condition. We closed the managed software
+system by a feedback loop, where in each control period, the
+output is forwarded as a Map of response time and workload
+arrival rate to compare with the target set-point. Afterwards, the information is forwarded to compute a function:
+
+\begin{equation}
+f(t)=1-\tilde{\lambda}(t)*\tilde{r}(t)
+\end{equation} 
+
+where \begin{math}\tilde{\lambda}(t) = \frac {\lambda(t-1)}
+	{\lambda_{median}}\end{math} and \begin{math}\tilde{r}(t) =\frac
+	{RT_{95}(t-1)} {RT_{setpoint}}\end{math}. Since,
+unpredictability and burstiness of user requests is common phenomena for Cloud application, we have considered workload arrival rate $\lambda(t)$ as a disturbance to the system. Should it be not realized by the system or predicted in advance, can dramatically degrade
+application performance. For capturing the change in the workload
+arrival rate, current workload arrival rate in the system is divided by median of
+previous arrival rates. A median filter is used with window size of four, that provides better estimation about variability of the workload arrival rate. 
+Furthermore, the function $f(t)$ is computed at each $t$ time to analyze how far the multiplication ratio of workload change and response time increment/decrement is from 1. The idea is to keep the function greater than $0$ to stabilize
+the system to operate under target response time. If the function is positive and above a desired/predefined threshold, the controller keeps the highest user experience mode \emph{i.e.,} mode 2. Since the controller is not aware of how much amount of underlying resources are used, it notifies the \emph{vmRemove} event to the IaaS controller (see line 7, Algorithm \ref{algo:rt_extended}). In case, the condition block falls to \emph{f(t) $\leq 0$}, a « RequestEvent » of \emph{vmAdd} is notified to IaaS controller (see line 10, Algorithm \ref{algo:rt_extended}).
+
+
+
+
+
+%------------------------------Algorithm 2-------------------------
+\begin{algorithm} [!ht]
+\DontPrintSemicolon
+\footnotesize
+\KwIn { $Thr_{rt}, \lambda=[0 \quad 0 \quad 0 \quad 0], setPoint, app$ 
+} 
+\KwOut { updated $\lambda$, $Curr_{mode}$ = Current application mode. } 
+
+\BlankLine 
+
+\If {($handleEvent == responseTime$)}
+     {    $\lambda(t-1)\gets servedRequest \ $ \;
+         $enqueue(\lambda)$ \;
+         $f(t)\gets 1-(\lambda(t-1)/\lambda_{median})*(RT_{95}/setPoint)$
+	  
+	   
+		\If  { $(f(t) > 0) \enspace\land\enspace\  (function < Thr_{rt})$ } 
+			     { $app.mode\gets mode \ 1$\;
+			     $RequestEvent \rightarrow vmAdd$ \tcc*[f]{VM \emph{Addition} request event sent to IaaS controller along with $RT_{95}$ and workload-increment = $(\lambda(t-1)/\lambda_{median})$} \;}
+		\ElseIf { $f(t) \leq 0$ } 
+			{ $app.mode\gets mode \ 0$ \;
+			$RequestEvent \rightarrow vmAdd$ \tcc*[f]{VM \emph{Addition} request event sent to IaaS controller along with $RT_{95}$ and workload-increment = $(\lambda(t-1)/\lambda_{median})$} \;}
+ 			\Else {$app.mode\gets mode \ 2$ \; 
+ 			       $RequestEvent \rightarrow vmRemove$ \tcc*[f]{VM \emph{Removal} request event sent to IaaS controller along with $RT_{95}$ and workload-increment = $(\lambda(t-1)/\lambda_{median})$} \;}
+                $dequeue(\lambda)$ \; 
+                $Curr_{mode} = app.mode$ \;			
+ 			
+ 			    							 							
+ 		}
+\Return { $\lambda$, $Curr_{mode}$  } 
+\caption {Response time controller (RT-C)} 
+\label{algo:rt_extended}
+\end{algorithm}
+%--------------------------%End-%---------------------------------
+ 
+
+
+
+\paragraph*{\textbf{Green Energy Controller (GE-C)}} While \emph{RT-C} is built to avoid performance degradation by keeping
+response time to a target set point, is not aware of when green energy production is scarce or abundant to actuate application's mode. On the other hand, devising adaptation plan only based on green energy availability can dissatisfy reasonable QoS while workload arrival is higher.
+Therefore, we intend to build a controller which can make adaptive decision based on the better quality of energy \emph{i.e.,} green energy and application's performance. 
+
+We distinguish between two control periods: long and short. In \emph{longer control period} the application controller decides application's mode based on green energy availability. Since, we are considering green energy, one should keep in mind that, 
+some sources of energy are only available during certain times. For instance, solar energy is available during the day and the amount produced depends on the weather and the season \cite{GreenHadoop}. Due to the intermittency, we have divided the total green energy production to three different regions \emph{i.e.,} no green energy (at night), few (early morning and late afternoon) and adequate (mid-day). To distinguish between the regions we choose a static threshold $Thr_{max}$, above which the controller activates high user experience mode (mode 2). When green energy production falls between $0$ and $Thr_{max}$, the controller chooses an actuator value that triggers the medium user experience mode (mode 1), and in case of current green energy amount is null, mode 0 is activated. In short, the controller activates higher or lower user experience mode based on the energy information pushed by infrastructure in longer control periods. In contrast, the
+application controller checks the response time periodically in \emph{shorter control period} to identify overloaded condition in the system. If occurred,
+the controller downgrades the user experience to lower level.
+
+Afterwards, we try to investigate when performance indicator of an Application can trigger add/remove VM request. Since this controller have two feedback loops activating at two different control period: long and short, and longer control period's decision depends only on the energy information, hence we rather investigate the shorter control period loop which is based on response time event. The shorter control loop periodically checks if the performance of the application is degraded or not (\emph{i.e.,} violating targeted response time) by computing a function at line 15 at Algorithm \ref{algo:h_green_extended}. If the computed function becomes negative (f(t) $\leq 0$) meaning, if the current response time is beyond or borderline to set point and/or the tendency of the workload is increasing, the controller downgrades the user experience by subtracting 1 from previous control period’s decision value and notify a \texttt{vmAdd} event request to the infrastructure controller (see line 18, Algorithm \ref{algo:h_green_extended}). While the function is greater than $0$, which suggests that the application is performing well by keeping current 95th percentile response time to the set point, application keeps the user experience as before but notify a \texttt{vmRemove} event request to the infrastructure controller (see line 21, Algorithm \ref{algo:h_green_extended}). In both cases, « RequestEvent » notifies the specific event along with application's current 95th percentile response time and workload increment ratio to the IaaS controller.
+
+%------------- ALgorithm Green hybrid_extended -------------------------
+\begin{algorithm} [!ht]
+\DontPrintSemicolon
+\footnotesize
+\KwIn { $Thr_{max}$ = Threshold for green energy, $\lambda=[0 \quad 0 \quad 0 \quad 0]$, $setPoint$,$Curr_{GE}$ = Current green energy production. } 
+\KwOut { updated $\lambda$, $Curr_{mode}$ = Current application mode.  } 
+
+\BlankLine 
+\emph{/* \textcolor{red}{Initiates in longer control period} */}\;
+
+\If {($handleEvent == greenEnergy$)} 
+{
+\If  { $Curr_{GE} == 0$ } 
+			     { $app.mode\gets mode \ 0$\;}
+		\ElseIf { $Curr_{GE}>Thr_{max}$ } 
+			{ $app.mode\gets mode \ 2$ \;}
+ 			\Else {$app.mode\gets mode \ 1$ \;}
+ 			      $Curr_{mode} = app.mode$ \;  
+ 			     }
+\Return { $Curr_{mode}$ } 			      			   
+\BlankLine  
+\emph{/* Initiates in shorter control period */}\;  
+  \If {($handleEvent == responseTime$)} 
+     {    $\lambda(t-1)\gets servedRequest \ $ \;
+         $enqueue(\lambda)$ \;
+         $f(t) \gets 1-(\lambda(t-1)/\lambda_{median})*(RT_{95}/setPoint)$
+	  
+ \If { $(f(t) \leq0) \quad and  \quad (Curr_{mode} \neq0)$ }
+			     { $app.mode\gets Curr_{mode}-1$ \;
+			       $RequestEvent \rightarrow vmAdd$ \tcc*[f]{VM \emph{Addition} request event sent to IaaS controller along with $RT_{95}$ and workload-increment = $(\lambda(t-1)/\lambda_{median})$} \;}
+ 			\ElseIf {$(f(t)>0)$ }
+ 			{ $app.mode\gets Curr_{mode}$ \;
+ 			$RequestEvent \rightarrow vmRemove$ \tcc*[f]{VM \emph{Removal} request event sent to IaaS controller along with $RT_{95}$ and workload-increment = $(\lambda(t-1)/\lambda_{median})$} \;}
+           
+         \Else { $app.mode\gets Curr_{mode}$ \; }          			
+             $Curr_{mode} = app.mode$\;
+             $dequeue(\lambda)$ \;        			
+           } 
+              
+\Return { $\lambda$, $Curr_{mode}$ } 
+\caption {Green Energy controller (GE-C)}
+\label{algo:h_green_extended}
+\end{algorithm}
+
+
+
+
+

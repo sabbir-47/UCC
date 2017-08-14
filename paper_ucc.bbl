@@ -1,0 +1,314 @@
+%%% -*-BibTeX-*-
+%%% Do NOT edit. File created by BibTeX with style
+%%% ACM-Reference-Format-Journals [18-Jan-2012].
+
+\begin{thebibliography}{00}
+
+%%% ====================================================================
+%%% NOTE TO THE USER: you can override these defaults by providing
+%%% customized versions of any of these macros before the \bibliography
+%%% command.  Each of them MUST provide its own final punctuation,
+%%% except for \shownote{}, \showDOI{}, and \showURL{}.  The latter two
+%%% do not use final punctuation, in order to avoid confusing it with
+%%% the Web address.
+%%%
+%%% To suppress output of a particular field, define its macro to expand
+%%% to an empty string, or better, \unskip, like this:
+%%%
+%%% \newcommand{\showDOI}[1]{\unskip}   % LaTeX syntax
+%%%
+%%% \def \showDOI #1{\unskip}           % plain TeX syntax
+%%%
+%%% ====================================================================
+
+\ifx \showCODEN    \undefined \def \showCODEN     #1{\unskip}     \fi
+\ifx \showDOI      \undefined \def \showDOI       #1{#1}\fi
+\ifx \showISBNx    \undefined \def \showISBNx     #1{\unskip}     \fi
+\ifx \showISBNxiii \undefined \def \showISBNxiii  #1{\unskip}     \fi
+\ifx \showISSN     \undefined \def \showISSN      #1{\unskip}     \fi
+\ifx \showLCCN     \undefined \def \showLCCN      #1{\unskip}     \fi
+\ifx \shownote     \undefined \def \shownote      #1{#1}          \fi
+\ifx \showarticletitle \undefined \def \showarticletitle #1{#1}   \fi
+\ifx \showURL      \undefined \def \showURL       {\relax}        \fi
+% The following commands are used for tagged output and should be
+% invisible to TeX
+\providecommand\bibfield[2]{#2}
+\providecommand\bibinfo[2]{#2}
+\providecommand\natexlab[1]{#1}
+\providecommand\showeprint[2][]{arXiv:#2}
+
+\bibitem[\protect\citeauthoryear{A.~Moreno, C{\'{a}}mara, Garlan, and
+  R.~Schmerl}{A.~Moreno et~al\mbox{.}}{2016}]%
+        {garlan1}
+\bibfield{author}{\bibinfo{person}{Gabriel A.~Moreno}, \bibinfo{person}{Javier
+  C{\'{a}}mara}, \bibinfo{person}{David Garlan}, {and} \bibinfo{person}{Bradley
+  R.~Schmerl}.} \bibinfo{year}{2016}\natexlab{}.
+\newblock \showarticletitle{Efficient Decision-Making under Uncertainty for
+  Proactive Self-Adaptation}. In \bibinfo{booktitle}{{\em IEEE International
+  Conference on Autonomic Computing, ICAC}}. \bibinfo{pages}{147--156}.
+\newblock
+\showDOI{%
+\url{https://doi.org/10.1109/ICAC.2016.59}}
+
+
+\bibitem[\protect\citeauthoryear{Costache, Kortas, Morin, and
+  Parlavantzas}{Costache et~al\mbox{.}}{2017}]%
+        {morin2}
+\bibfield{author}{\bibinfo{person}{Stefania Costache}, \bibinfo{person}{Samuel
+  Kortas}, \bibinfo{person}{Christine Morin}, {and} \bibinfo{person}{Nikos
+  Parlavantzas}.} \bibinfo{year}{2017}\natexlab{}.
+\newblock \showarticletitle{Market-based autonomous resource and application
+  management in private clouds}.
+\newblock \bibinfo{journal}{{\em Journal of Parallel and Distribured
+  Computing\/}}  \bibinfo{volume}{100} (\bibinfo{year}{2017}),
+  \bibinfo{pages}{85--102}.
+\newblock
+\showDOI{%
+\url{https://doi.org/10.1016/j.jpdc.2016.10.003}}
+
+
+\bibitem[\protect\citeauthoryear{Costache, Parlavantzas, Morin, and
+  Kortas}{Costache et~al\mbox{.}}{2011}]%
+        {morin1}
+\bibfield{author}{\bibinfo{person}{Stefania Costache}, \bibinfo{person}{Nikos
+  Parlavantzas}, \bibinfo{person}{Christine Morin}, {and}
+  \bibinfo{person}{Samuel Kortas}.} \bibinfo{year}{2011}\natexlab{}.
+\newblock \showarticletitle{An Economic Approach for Application QoS Management
+  in Clouds}. In \bibinfo{booktitle}{{\em Euro-Par 2011: Parallel Processing
+  Workshops Bordeaux, France, August 29 - September 2, 2011}}.
+  \bibinfo{pages}{426--435}.
+\newblock
+\showDOI{%
+\url{https://doi.org/10.1007/978-3-642-29740-3_48}}
+
+
+\bibitem[\protect\citeauthoryear{Dupont, Sheikhalishahi, Federico, and
+  Hermenier}{Dupont et~al\mbox{.}}{2015}]%
+        {corentin}
+\bibfield{author}{\bibinfo{person}{Corentin Dupont}, \bibinfo{person}{Mehdi
+  Sheikhalishahi}, \bibinfo{person}{Michele~Facca Federico}, {and}
+  \bibinfo{person}{Fabien Hermenier}.} \bibinfo{year}{2015}\natexlab{}.
+\newblock \showarticletitle{An energy aware application controller for
+  optimizing renewable energy consumption in Cloud computing data centres}.
+  \bibinfo{address}{Limassol, Cyprus}.
+\newblock
+
+
+\bibitem[\protect\citeauthoryear{Gao, Curtis, Wong, and Keshav}{Gao
+  et~al\mbox{.}}{2012}]%
+        {not-easy}
+\bibfield{author}{\bibinfo{person}{Peter~Xiang Gao}, \bibinfo{person}{Andrew~R.
+  Curtis}, \bibinfo{person}{Bernard Wong}, {and} \bibinfo{person}{Srinivasan
+  Keshav}.} \bibinfo{year}{2012}\natexlab{}.
+\newblock \showarticletitle{It's not easy being green}. In
+  \bibinfo{booktitle}{{\em Proceedings of the ACM SIGCOMM 2012 conference on
+  Applications, technologies, architectures, and protocols for computer
+  communication}} {\em (\bibinfo{series}{SIGCOMM '12})}.
+  \bibinfo{publisher}{ACM}, 12.
+\newblock
+\showDOI{%
+\url{https://doi.org/10.1145/2342356.2342398}}
+
+
+\bibitem[\protect\citeauthoryear{Goiri, Katsak, Le, Nguyen, and
+  Bianchini}{Goiri et~al\mbox{.}}{2013}]%
+        {parasol}
+\bibfield{author}{\bibinfo{person}{\'{I}\~{n}igo Goiri},
+  \bibinfo{person}{William Katsak}, \bibinfo{person}{Kien Le},
+  \bibinfo{person}{Thu~D. Nguyen}, {and} \bibinfo{person}{Ricardo Bianchini}.}
+  \bibinfo{year}{2013}\natexlab{}.
+\newblock \showarticletitle{Parasol and GreenSwitch: Managing Datacenters
+  Powered by Renewable Energy}. \bibinfo{publisher}{ACM}.
+\newblock
+
+
+\bibitem[\protect\citeauthoryear{Goiri, Le, Haque, Beauchea, Nguyen, Guitart,
+  Torres, and Bianchini}{Goiri et~al\mbox{.}}{2011}]%
+        {GreenSlot}
+\bibfield{author}{\bibinfo{person}{\'{I}\~{n}igo Goiri}, \bibinfo{person}{Kien
+  Le}, \bibinfo{person}{Md.~E. Haque}, \bibinfo{person}{Ryan Beauchea},
+  \bibinfo{person}{Thu~D. Nguyen}, \bibinfo{person}{Jordi Guitart},
+  \bibinfo{person}{Jordi Torres}, {and} \bibinfo{person}{Ricardo Bianchini}.}
+  \bibinfo{year}{2011}\natexlab{}.
+\newblock \showarticletitle{GreenSlot: Scheduling Energy Consumption in Green
+  Datacenters}. In \bibinfo{booktitle}{{\em Proc. of Int. Conf. for High
+  Performance Computing, Networking, Storage and Analysis}}.
+  \bibinfo{publisher}{ACM}, Article \bibinfo{articleno}{20},
+  \bibinfo{numpages}{11}~pages.
+\newblock
+\showISBNx{978-1-4503-0771-0}
+
+
+\bibitem[\protect\citeauthoryear{Goiri, Le, Nguyen, Guitart, Torres, and
+  Bianchini}{Goiri et~al\mbox{.}}{2012}]%
+        {GreenHadoop}
+\bibfield{author}{\bibinfo{person}{\'{I}\~{n}igo Goiri}, \bibinfo{person}{Kien
+  Le}, \bibinfo{person}{Thu~D. Nguyen}, \bibinfo{person}{Jordi Guitart},
+  \bibinfo{person}{Jordi Torres}, {and} \bibinfo{person}{Ricardo Bianchini}.}
+  \bibinfo{year}{2012}\natexlab{}.
+\newblock \showarticletitle{GreenHadoop: Leveraging Green Energy in
+  Data-processing Frameworks}. In \bibinfo{booktitle}{{\em Proc. of the 7th ACM
+  European Conf. on Comp. Syst.}} \bibinfo{publisher}{ACM},
+  \bibinfo{pages}{57--70}.
+\newblock
+
+
+\bibitem[\protect\citeauthoryear{Hankendi, Kivilcim~Coskun, and
+  Hoffmann}{Hankendi et~al\mbox{.}}{2016}]%
+        {adaptcap}
+\bibfield{author}{\bibinfo{person}{Can Hankendi}, \bibinfo{person}{Ayse
+  Kivilcim~Coskun}, {and} \bibinfo{person}{Henry Hoffmann}.}
+  \bibinfo{year}{2016}\natexlab{}.
+\newblock \showarticletitle{Adapt{\&}Cap: Coordinating System- and
+  Application-Level Adaptation for Power-Constrained Systems}.
+\newblock \bibinfo{journal}{{\em IEEE Design \& Test\/}} \bibinfo{volume}{33},
+  \bibinfo{number}{1} (\bibinfo{year}{2016}), \bibinfo{pages}{68--76}.
+\newblock
+\showDOI{%
+\url{https://doi.org/10.1109/MDAT.2015.2463275}}
+
+
+\bibitem[\protect\citeauthoryear{Haque, Goiri, R., and Nguyen}{Haque
+  et~al\mbox{.}}{2015}]%
+        {GreenPar}
+\bibfield{author}{\bibinfo{person}{Md.~E. Haque},
+  \bibinfo{person}{\'{I}\~{n}igo Goiri}, \bibinfo{person}{Bianchini R.}, {and}
+  \bibinfo{person}{Thu~D. Nguyen}.} \bibinfo{year}{2015}\natexlab{}.
+\newblock \showarticletitle{GreenPar: Scheduling Parallel High Performance
+  Applications in Green Datacenters}. In \bibinfo{booktitle}{{\em Proceedings
+  of the 29th {ACM} on International Conference on Supercomputing, ICS'15,
+  Newport Beach/Irvine, CA, USA, June 08 - 11, 2015}}.
+  \bibinfo{pages}{217--227}.
+\newblock
+\showDOI{%
+\url{https://doi.org/10.1145/2751205.2751221}}
+
+
+\bibitem[\protect\citeauthoryear{Hasan, Kouki, Ledoux, and Pazat}{Hasan
+  et~al\mbox{.}}{2017b}]%
+        {sabbir}
+\bibfield{author}{\bibinfo{person}{MD~Sabbir Hasan}, \bibinfo{person}{Yousri
+  Kouki}, \bibinfo{person}{Thomas Ledoux}, {and} \bibinfo{person}{Jean-Louis
+  Pazat}.} \bibinfo{year}{2017}\natexlab{b}.
+\newblock \showarticletitle{Exploiting Renewable sources : when Green SLA
+  becomes a possible reality in Cloud computing.}
+\newblock \bibinfo{journal}{{\em IEEE Transactions on Cloud Computing\/}}
+  \bibinfo{volume}{5}, \bibinfo{number}{2} (\bibinfo{date}{April}
+  \bibinfo{year}{2017}), \bibinfo{pages}{1--1}.
+\newblock
+\showISSN{2168-7161}
+
+
+\bibitem[\protect\citeauthoryear{Hasan, Alvares, Ledoux, and Pazat}{Hasan
+  et~al\mbox{.}}{2016}]%
+        {cloudcom}
+\bibfield{author}{\bibinfo{person}{Sabbir Hasan}, \bibinfo{person}{Frederico
+  Alvares}, \bibinfo{person}{Thomas Ledoux}, {and} \bibinfo{person}{Jean-Louis
+  Pazat}.} \bibinfo{year}{2016}\natexlab{}.
+\newblock \showarticletitle{Enabling Green Energy awareness in Interactive
+  Cloud Application}. In \bibinfo{booktitle}{{\em Int. Conf. on Cloud Computing
+  Technology and Science}}. \bibinfo{publisher}{IEEE}.
+\newblock
+
+
+\bibitem[\protect\citeauthoryear{Hasan, Alvares, Ledoux, and Pazat}{Hasan
+  et~al\mbox{.}}{2017a}]%
+        {tsc}
+\bibfield{author}{\bibinfo{person}{Sabbir Hasan}, \bibinfo{person}{Frederico
+  Alvares}, \bibinfo{person}{Thomas Ledoux}, {and} \bibinfo{person}{Jean-Louis
+  Pazat}.} \bibinfo{year}{2017}\natexlab{a}.
+\newblock \showarticletitle{Investigating Energy consumption and Performance
+  trade-off for Interactive Cloud Application.}
+\newblock \bibinfo{journal}{{\em IEEE Transactions on Sustainable computing\/}}
+  \bibinfo{volume}{2}, \bibinfo{number}{2} (\bibinfo{date}{June}
+  \bibinfo{year}{2017}), \bibinfo{pages}{113--126}.
+\newblock
+\showISSN{2377-3782}
+
+
+\bibitem[\protect\citeauthoryear{Kephart and Chess}{Kephart and Chess}{2003}]%
+        {vision}
+\bibfield{author}{\bibinfo{person}{J.~O. Kephart} {and} \bibinfo{person}{D.~M.
+  Chess}.} \bibinfo{year}{2003}\natexlab{}.
+\newblock \showarticletitle{The vision of autonomic computing}.
+\newblock \bibinfo{journal}{{\em Computer\/}} \bibinfo{volume}{36},
+  \bibinfo{number}{1} (\bibinfo{date}{January} \bibinfo{year}{2003}),
+  \bibinfo{pages}{41--50}.
+\newblock
+\showDOI{%
+\url{https://doi.org/10.1109/MC.2003.1160055}}
+
+
+\bibitem[\protect\citeauthoryear{Klein, Maggio, \AA{rz}\'{e}n, and
+  Hern\'{a}ndez-Rodriguez}{Klein et~al\mbox{.}}{2014}]%
+        {brownout}
+\bibfield{author}{\bibinfo{person}{Cristian Klein}, \bibinfo{person}{Martina
+  Maggio}, \bibinfo{person}{Karl-Erik \AA{rz}\'{e}n}, {and}
+  \bibinfo{person}{Francisco Hern\'{a}ndez-Rodriguez}.}
+  \bibinfo{year}{2014}\natexlab{}.
+\newblock \showarticletitle{Brownout: Building More Robust Cloud Applications}.
+  In \bibinfo{booktitle}{{\em Proc. of the 36th Int. Conf. on Software
+  Engineering}}. \bibinfo{publisher}{ACM}.
+\newblock
+\showDOI{%
+\url{https://doi.org/10.1145/2568225.2568227}}
+
+
+\bibitem[\protect\citeauthoryear{Shi, Dong, M.~Djouadi, Feng, Ma, and Wang}{Shi
+  et~al\mbox{.}}{2016}]%
+        {shi}
+\bibfield{author}{\bibinfo{person}{Xiaoyu Shi}, \bibinfo{person}{Jin Dong},
+  \bibinfo{person}{Seddik M.~Djouadi}, \bibinfo{person}{Yong Feng},
+  \bibinfo{person}{Xiao Ma}, {and} \bibinfo{person}{Yefu Wang}.}
+  \bibinfo{year}{2016}\natexlab{}.
+\newblock \showarticletitle{PAPMSC: Power-Aware Performance Management Approach
+  for Virtualized Web Servers via Stochastic Control}.
+\newblock \bibinfo{journal}{{\em J. Grid Comput.\/}} \bibinfo{volume}{14},
+  \bibinfo{number}{1} (\bibinfo{year}{2016}), \bibinfo{pages}{171--191}.
+\newblock
+\showDOI{%
+\url{https://doi.org/10.1007/s10723-015-9341-z}}
+
+
+\bibitem[\protect\citeauthoryear{Turowski and Lenk}{Turowski and Lenk}{2014}]%
+        {vertical}
+\bibfield{author}{\bibinfo{person}{Marian Turowski} {and}
+  \bibinfo{person}{Alexander Lenk}.} \bibinfo{year}{2014}\natexlab{}.
+\newblock \showarticletitle{Vertical Scaling Capability of OpenStack - Survey
+  of Guest Operating Systems, Hypervisors, and the Cloud Management Platform}.
+  In \bibinfo{booktitle}{{\em Service-Oriented Computing - {ICSOC} 2014
+  Workshops - WESOA; SeMaPS, RMSOC, KASA, ISC, FOR-MOVES, {CCSA} and Satellite
+  Events, Paris, France}}. \bibinfo{pages}{351--362}.
+\newblock
+\showDOI{%
+\url{https://doi.org/10.1007/978-3-319-22885-3_30}}
+
+
+\bibitem[\protect\citeauthoryear{Wang and Wang}{Wang and Wang}{2011}]%
+        {server-cluster}
+\bibfield{author}{\bibinfo{person}{Xiaorui Wang} {and} \bibinfo{person}{Yefu
+  Wang}.} \bibinfo{year}{2011}\natexlab{}.
+\newblock \showarticletitle{Coordinating Power Control and Performance
+  Management for Virtualized Server Clusters}.
+\newblock \bibinfo{journal}{{\em {IEEE} Trans. Parallel Distrib. Syst.\/}}
+  \bibinfo{volume}{22}, \bibinfo{number}{2} (\bibinfo{year}{2011}),
+  \bibinfo{pages}{245--259}.
+\newblock
+\showDOI{%
+\url{https://doi.org/10.1109/TPDS.2010.91}}
+
+
+\bibitem[\protect\citeauthoryear{Zhang, Wang, and Wang}{Zhang
+  et~al\mbox{.}}{2011}]%
+        {GreenWare}
+\bibfield{author}{\bibinfo{person}{Yanwei Zhang}, \bibinfo{person}{Yefu Wang},
+  {and} \bibinfo{person}{Xiaorui Wang}.} \bibinfo{year}{2011}\natexlab{}.
+\newblock \showarticletitle{GreenWare: Greening Cloud-Scale Data Centers to
+  Maximize the Use of Renewable Energy.}. In \bibinfo{booktitle}{{\em
+  ACM/IFIP/USENIX 12th International Middleware Conference}} {\em
+  (\bibinfo{series}{Lecture Notes in Computer Science})}.
+  \bibinfo{publisher}{Springer}, \bibinfo{pages}{143--164}.
+\newblock
+
+
+\end{thebibliography}
