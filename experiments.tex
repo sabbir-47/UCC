@@ -26,7 +26,7 @@ a function that reads a file, where actuator value is updated
 in each control period and execute the associated modes for
 each user request. For instance, Mode 1 activates the codes of
 recommendation one, mode 2 activates both recommendations
-and mode 0 provides no recommendation. Furthermore, the application is deployed with all its tiers \emph{i.e.,} web and database server inside a VM using a LEMP stack\footnote{\url{https://lemp.io/}}. Each application VM and Load-balancer (LB) VM were configured with 4 cores of CPU and 8GB of memory similar to Large flavor VM. Since, we used 2 compute servers, we could use maximum of 6 VM's and minimum at 2 VM's\footnote{1 LB VM and 1 application VM}. 
+and mode 0 provides no recommendation. Popular e-commerce providers provide multi-level recommendations to their users. Furthermore, the application is deployed with all its tiers \emph{i.e.,} web and database server inside a VM using a LEMP stack\footnote{\url{https://lemp.io/}}. Each application VM and Load-balancer (LB) VM were configured with 4 cores of CPU and 8GB of memory similar to Large flavor VM. Since, we used 2 compute servers, we could use maximum of 6 VM's and minimum at 2 VM's\footnote{1 LB VM and 1 application VM}. 
 
 \begin{figure}[h]
 \includegraphics[scale=.75]{Graphs/workload_ucc.eps}
@@ -103,8 +103,7 @@ In our experiment, each 4 minutes were considered as an
 hour, thus we calculated the energy consumption of 24
 hours, impacted by each controller, which is presented at
 Table \ref{tab:watt1} and \ref{tab:watt2}. Each experiment was run several times and we found the energy consumption difference between each run
-was 1$\sim$2 watts. At first, we scaled down the wikipedia workload to test the application controllers with static infrastructure, that is, in any given time application controllers were unable to use underlying elastic infrastructure. Table \ref{tab:watt1} summarizes that, GE-C can reduce brown energy consumption by 9.02\% and 6.4\% compared to NA and RT-C, while total energy consumption was reduced by 6.53\% and 6.4\% respectively.  
-
+was 1$\sim$2 watts. At first, we scaled down the wikipedia workload to test the application controllers with static infrastructure, that is, in any given time application controllers were unable to use underlying elastic infrastructure. Table \ref{tab:watt1} summarizes that, GE-C can reduce brown energy consumption by 9.02\% and 6.4\% compared to NA and RT-C, while total energy consumption was reduced by 6.53\% and 6.4\% respectively. NA was supposed to consume more energy than RT-C since it lacks the capability to adapt application to lower level. Due to the heavy  user requests at some periods, NA approach saturated RUBiS application which was unable to accept any requests which resulted lower availability and lower energy consumption.
 
 %Total: 5912.49
 %Green: 3395.9
@@ -126,6 +125,10 @@ GE-C & 3270.20 (NA > 6.53\%)(RT-C > 6.4\%) & 1760.09 (NA > 9.02\%) (RT-C > 10.88
 
 %Rt & 3493.93 & 1975.18 & 1518.75  \\ \hline %&1446.01 & 1941.32 & 3387.33 & --\\ \hline
 %Hybrid-Green & 3270.20 (6.4\%) & 1760.09 (10.88\%) & 1510.11 \alert{(0.50\%)} \\\hline
+
+Afterwards, we proceeded with usual settings with the experiment having infrastructure elasticity capability for all the applications controllers. Table \ref{tab:watt2} shows that, GE-C can reduce significant amount of brown energy by 35.11\% and 26.65\% compared to NA approach and RT-C respectively. Interestingly, RT-C consumed less green energy than the other application controllers, although this application controller was designed to consume more green energy than its counterpart application controllers. The reason being that, RT-C activated higher application mode  only in the presence of green energy, irrespective to the amount of user requests. Therefore, if the user requests are lower/higher while few green energy is available the controller activates medium service level mode (\emph{i.e.,} mode 1 which activates 1 kind of recommendation) and starts activating higher service level(\emph{i.e.,} mode 2 which activates 2 different kind of recommendation) when the amount of green energy increases. On the other hand, when green energy is scarce, application works at a low service level mode, that is, user can access the system but no recommendation is provided. In this experiment, the user requests started growing when green energy were scarce. Therefore, NA and RT-c both activated more application VM to cope up with the workload, which can be seen at Figure \ref{fig:vm}.
+
+
 
 \begin{table*}
 \caption{Energy Consumption in Watts (Application and Infrastructure adaptation)}

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=pdflatex 2014.4.22)  15 AUG 2017 20:28
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=pdflatex 2014.4.22)  15 AUG 2017 22:20
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1977,10 +1977,7 @@ Package relsize Warning: Font size 4.86111pt is too small.
 
 Package natbib Warning: Citation `rubis' on page 5 undefined on input line 20.
 
-
-Underfull \vbox (badness 3780) has occurred while \output is active []
-
- [5.5]
+[5.5]
 Package epstopdf Info: Source file: <Graphs/workload_ucc.eps>
 (epstopdf)                    date: 2017-08-15 00:18:25
 (epstopdf)                    size: 66292 bytes
@@ -1991,8 +1988,7 @@ Package epstopdf Info: Source file: <Graphs/workload_ucc.eps>
 nverted-to.pdf Graphs/workload_ucc.eps>
 (epstopdf)             \includegraphics on input line 32.
 Package epstopdf Info: Output file is already uptodate.
-
-<Graphs/workload_ucc-eps-converted-to.pdf, id=285, 389.455pt x 144.54pt>
+ <Graphs/workload_ucc-eps-converted-to.pdf, id=285, 389.455pt x 144.54pt>
 File: Graphs/workload_ucc-eps-converted-to.pdf Graphic file (type pdf)
 
 <use Graphs/workload_ucc-eps-converted-to.pdf>
@@ -2058,12 +2054,12 @@ Overfull \hbox (18.57217pt too wide) in paragraph at lines 89--90
  []
 
 
-Overfull \hbox (28.8192pt too wide) in paragraph at lines 124--133
+Overfull \hbox (28.8192pt too wide) in paragraph at lines 115--124
  [][] 
  []
 
 
-Overfull \hbox (46.8192pt too wide) in paragraph at lines 141--150
+Overfull \hbox (46.8192pt too wide) in paragraph at lines 136--145
  [][] 
  []
 
@@ -2075,17 +2071,17 @@ Package epstopdf Info: Source file: <Graphs/vm.eps>
 (epstopdf)                    size: 7966 bytes
 (epstopdf)             Command: <repstopdf --outfile=Graphs/vm-eps-converted-to
 .pdf Graphs/vm.eps>
-(epstopdf)             \includegraphics on input line 154.
+(epstopdf)             \includegraphics on input line 149.
 Package epstopdf Info: Output file is already uptodate.
-<Graphs/vm-eps-converted-to.pdf, id=342, 317.185pt x 216.81pt>
+<Graphs/vm-eps-converted-to.pdf, id=347, 317.185pt x 216.81pt>
 File: Graphs/vm-eps-converted-to.pdf Graphic file (type pdf)
 
 <use Graphs/vm-eps-converted-to.pdf>
-Package pdftex.def Info: Graphs/vm-eps-converted-to.pdf used on input line 154.
+Package pdftex.def Info: Graphs/vm-eps-converted-to.pdf used on input line 149.
 
 (pdftex.def)             Requested size: 253.74832pt x 173.44823pt.
 
-Overfull \hbox (12.60083pt too wide) in paragraph at lines 154--155
+Overfull \hbox (12.60083pt too wide) in paragraph at lines 149--150
  [][] 
  []
 
@@ -2097,75 +2093,65 @@ Package epstopdf Info: Source file: <Graphs/cost.eps>
 (epstopdf)                    size: 6235 bytes
 (epstopdf)             Command: <repstopdf --outfile=Graphs/cost-eps-converted-
 to.pdf Graphs/cost.eps>
-(epstopdf)             \includegraphics on input line 169.
+(epstopdf)             \includegraphics on input line 164.
 Package epstopdf Info: Output file is already uptodate.
-<Graphs/cost-eps-converted-to.pdf, id=343, 317.185pt x 216.81pt>
+<Graphs/cost-eps-converted-to.pdf, id=348, 317.185pt x 216.81pt>
 File: Graphs/cost-eps-converted-to.pdf Graphic file (type pdf)
 
 <use Graphs/cost-eps-converted-to.pdf>
 Package pdftex.def Info: Graphs/cost-eps-converted-to.pdf used on input line 16
-9.
+4.
 (pdftex.def)             Requested size: 222.02797pt x 151.76596pt.
 ) (./relatedWork.tex [7.7 <./Graphs/responseTime-eps-converted-to.pdf> <./Graph
-s/percentile-eps-converted-to.pdf> <./Graphs/vm-eps-converted-to.pdf> <./Graphs
-/cost-eps-converted-to.pdf>] [8.8])
-(./conclusion.tex) (./paper_ucc.bbl
-Underfull \vbox (badness 1675) has occurred while \output is active []
-
-)
+s/percentile-eps-converted-to.pdf> <./Graphs/vm-eps-converted-to.pdf>] [8.8 <./
+Graphs/cost-eps-converted-to.pdf>])
+(./conclusion.tex) (./paper_ucc.bbl [9.9])
 
 Package natbib Warning: There were undefined citations.
 
-[9.9]
+[10.10
+
+]
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 158.
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 158.
  (./paper_ucc.aux)
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 158.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 158.
+Package rerunfilecheck Info: File `paper_ucc.out' has not changed.
+(rerunfilecheck)             Checksum: 668BB3CC40C3678F97F0A2D58CC737AB;1876.
 
-
-Package rerunfilecheck Warning: File `paper_ucc.out' has changed.
-(rerunfilecheck)                Rerun to get outlines right
-(rerunfilecheck)                or use package `bookmark'.
-
-Package rerunfilecheck Info: Checksums for `paper_ucc.out':
-(rerunfilecheck)             Before: 3C396E054A8CA64B28DDE49C0F36EE2A;1876
-(rerunfilecheck)             After:  668BB3CC40C3678F97F0A2D58CC737AB;1876.
 
 LaTeX Warning: There were multiply-defined labels.
 
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 158.
  ) 
 Here is how much of TeX's memory you used:
- 30618 strings out of 493315
- 529941 string characters out of 6137904
+ 30624 strings out of 493315
+ 529975 string characters out of 6137904
  713854 words of memory out of 5000000
- 32608 multiletter control sequences out of 15000+600000
- 88066 words of font info for 488 fonts, out of 8000000 for 9000
+ 32606 multiletter control sequences out of 15000+600000
+ 88458 words of font info for 494 fonts, out of 8000000 for 9000
  1118 hyphenation exceptions out of 8191
  63i,15n,94p,2145b,628s stack positions out of 5000i,500n,10000p,200000b,80000s
-pdfTeX warning (dest): name{section*.28} has been referenced but does not exi
-st, replaced by a fixed one
-
-{/usr/local/texlive/2013/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/local/tex
-live/2013/texmf-dist/fonts/type1/public/pxfonts/pxsy.pfb></usr/local/texlive/20
-13/texmf-dist/fonts/type1/public/pxfonts/pxsyc.pfb></usr/local/texlive/2013/tex
-mf-dist/fonts/type1/public/pxfonts/rpcxr.pfb></usr/local/texlive/2013/texmf-dis
-t/fonts/type1/public/pxfonts/rpxb.pfb></usr/local/texlive/2013/texmf-dist/fonts
-/type1/public/pxfonts/rpxi.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/
-public/pxfonts/rpxmi.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/public
-/pxfonts/rpxr.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/public/txfont
-s/t1xtt.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/public/txfonts/t1xt
-t.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb><
-/usr/local/texlive/2013/texmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb></usr/lo
-cal/texlive/2013/texmf-dist/fonts/type1/urw/palatino/uplb8a.pfb></usr/local/tex
-live/2013/texmf-dist/fonts/type1/urw/palatino/uplbi8a.pfb></usr/local/texlive/2
-013/texmf-dist/fonts/type1/urw/palatino/uplr8a.pfb></usr/local/texlive/2013/tex
-mf-dist/fonts/type1/urw/palatino/uplri8a.pfb>
-Output written on paper_ucc.pdf (9 pages, 780733 bytes).
+{/usr/local/texlive/2013/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/local/t
+exlive/2013/texmf-dist/fonts/type1/public/pxfonts/pxsy.pfb></usr/local/texlive/
+2013/texmf-dist/fonts/type1/public/pxfonts/pxsyc.pfb></usr/local/texlive/2013/t
+exmf-dist/fonts/type1/public/pxfonts/rpcxr.pfb></usr/local/texlive/2013/texmf-d
+ist/fonts/type1/public/pxfonts/rpxb.pfb></usr/local/texlive/2013/texmf-dist/fon
+ts/type1/public/pxfonts/rpxi.pfb></usr/local/texlive/2013/texmf-dist/fonts/type
+1/public/pxfonts/rpxmi.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/publ
+ic/pxfonts/rpxr.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/public/txfo
+nts/t1xtt.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/public/txfonts/t1
+xtt.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb
+></usr/local/texlive/2013/texmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb></usr/
+local/texlive/2013/texmf-dist/fonts/type1/urw/palatino/uplb8a.pfb></usr/local/t
+exlive/2013/texmf-dist/fonts/type1/urw/palatino/uplbi8a.pfb></usr/local/texlive
+/2013/texmf-dist/fonts/type1/urw/palatino/uplr8a.pfb></usr/local/texlive/2013/t
+exmf-dist/fonts/type1/urw/palatino/uplri8a.pfb>
+Output written on paper_ucc.pdf (10 pages, 783701 bytes).
 PDF statistics:
- 516 PDF objects out of 1000 (max. 8388607)
- 433 compressed objects within 5 object streams
+ 524 PDF objects out of 1000 (max. 8388607)
+ 440 compressed objects within 5 object streams
  144 named destinations out of 1000 (max. 500000)
  76465 words of extra memory for PDF output out of 89155 (max. 10000000)
 
