@@ -37,6 +37,18 @@
 \providecommand\natexlab[1]{#1}
 \providecommand\showeprint[2][]{arXiv:#2}
 
+\bibitem[\protect\citeauthoryear{??}{rub}{2009}]%
+        {rubis}
+ \bibinfo{year}{2009}\natexlab{}.
+\newblock \bibinfo{title}{RUBiS, Rice University Bidding System}.
+\newblock   (\bibinfo{year}{2009}).
+\newblock
+\showURL{%
+\url{http://rubis.ow2.org/}}
+\newblock
+\shownote{(Date last accessed July-2016).}
+
+
 \bibitem[\protect\citeauthoryear{A.~Moreno, C{\'{a}}mara, Garlan, and
   R.~Schmerl}{A.~Moreno et~al\mbox{.}}{2016}]%
         {garlan1}

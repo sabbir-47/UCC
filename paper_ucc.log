@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=pdflatex 2014.4.22)  15 AUG 2017 23:13
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=pdflatex 2014.4.22)  15 AUG 2017 23:46
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1490,83 +1490,83 @@ Package: listings 2007/02/22 1.4 (Carsten Heinz)
 (./paper_ucc.aux)
 \openout1 = `paper_ucc.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/pxmi/m/it on input line 76.
-LaTeX Font Info:    Try loading font information for OML+pxmi on input line 76.
+LaTeX Font Info:    Checking defaults for OML/pxmi/m/it on input line 77.
+LaTeX Font Info:    Try loading font information for OML+pxmi on input line 77.
 
 
 (/usr/local/texlive/2013/texmf-dist/tex/latex/pxfonts/omlpxmi.fd
 File: omlpxmi.fd 2000/12/14 v1.0
 )
-LaTeX Font Info:    ... okay on input line 76.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 76.
-LaTeX Font Info:    ... okay on input line 76.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 76.
-LaTeX Font Info:    ... okay on input line 76.
-LaTeX Font Info:    Checking defaults for OMS/pxsy/m/n on input line 76.
-LaTeX Font Info:    Try loading font information for OMS+pxsy on input line 76.
+LaTeX Font Info:    ... okay on input line 77.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 77.
+LaTeX Font Info:    ... okay on input line 77.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 77.
+LaTeX Font Info:    ... okay on input line 77.
+LaTeX Font Info:    Checking defaults for OMS/pxsy/m/n on input line 77.
+LaTeX Font Info:    Try loading font information for OMS+pxsy on input line 77.
 
 
 (/usr/local/texlive/2013/texmf-dist/tex/latex/pxfonts/omspxsy.fd
 File: omspxsy.fd 2000/12/14 v1.0
 )
-LaTeX Font Info:    ... okay on input line 76.
-LaTeX Font Info:    Checking defaults for OMX/pxex/m/n on input line 76.
-LaTeX Font Info:    Try loading font information for OMX+pxex on input line 76.
+LaTeX Font Info:    ... okay on input line 77.
+LaTeX Font Info:    Checking defaults for OMX/pxex/m/n on input line 77.
+LaTeX Font Info:    Try loading font information for OMX+pxex on input line 77.
 
 
 (/usr/local/texlive/2013/texmf-dist/tex/latex/pxfonts/omxpxex.fd
 File: omxpxex.fd 2000/12/14 v1.0
 )
-LaTeX Font Info:    ... okay on input line 76.
-LaTeX Font Info:    Checking defaults for U/pxexa/m/n on input line 76.
-LaTeX Font Info:    Try loading font information for U+pxexa on input line 76.
+LaTeX Font Info:    ... okay on input line 77.
+LaTeX Font Info:    Checking defaults for U/pxexa/m/n on input line 77.
+LaTeX Font Info:    Try loading font information for U+pxexa on input line 77.
 
 (/usr/local/texlive/2013/texmf-dist/tex/latex/pxfonts/upxexa.fd
 File: upxexa.fd 2000/12/14 v1.0
 )
-LaTeX Font Info:    ... okay on input line 76.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 76.
-LaTeX Font Info:    ... okay on input line 76.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 76.
-LaTeX Font Info:    ... okay on input line 76.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 76.
-LaTeX Font Info:    Try loading font information for TS1+cmr on input line 76.
+LaTeX Font Info:    ... okay on input line 77.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 77.
+LaTeX Font Info:    ... okay on input line 77.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 77.
+LaTeX Font Info:    ... okay on input line 77.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 77.
+LaTeX Font Info:    Try loading font information for TS1+cmr on input line 77.
 
 (/usr/local/texlive/2013/texmf-dist/tex/latex/base/ts1cmr.fd
 File: ts1cmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
 )
-LaTeX Font Info:    ... okay on input line 76.
-LaTeX Font Info:    Try loading font information for T1+pxr on input line 76.
+LaTeX Font Info:    ... okay on input line 77.
+LaTeX Font Info:    Try loading font information for T1+pxr on input line 77.
 
 (/usr/local/texlive/2013/texmf-dist/tex/latex/pxfonts/t1pxr.fd
 File: t1pxr.fd 2000/12/14 v1.0
 )
-LaTeX Font Info:    Try loading font information for OT1+pxr on input line 76.
+LaTeX Font Info:    Try loading font information for OT1+pxr on input line 77.
 
 (/usr/local/texlive/2013/texmf-dist/tex/latex/pxfonts/ot1pxr.fd
 File: ot1pxr.fd 2000/12/14 v1.0
 )<<ot1.cmap>><<oml.cmap>><<oms.cmap>><<omx.cmap>>
-LaTeX Font Info:    Try loading font information for U+pxsya on input line 76.
+LaTeX Font Info:    Try loading font information for U+pxsya on input line 77.
 
 (/usr/local/texlive/2013/texmf-dist/tex/latex/pxfonts/upxsya.fd
 File: upxsya.fd 2000/12/14 v1.0
 )
-LaTeX Font Info:    Try loading font information for U+pxsyb on input line 76.
+LaTeX Font Info:    Try loading font information for U+pxsyb on input line 77.
 
 (/usr/local/texlive/2013/texmf-dist/tex/latex/pxfonts/upxsyb.fd
 File: utxsyb.fd 2000/12/14 v1.0
 )
-LaTeX Font Info:    Try loading font information for U+pxmia on input line 76.
+LaTeX Font Info:    Try loading font information for U+pxmia on input line 77.
 
 (/usr/local/texlive/2013/texmf-dist/tex/latex/pxfonts/upxmia.fd
 File: upxmia.fd 2000/12/14 v1.0
 )
-LaTeX Font Info:    Try loading font information for U+pxsyc on input line 76.
+LaTeX Font Info:    Try loading font information for U+pxsyc on input line 77.
 
 (/usr/local/texlive/2013/texmf-dist/tex/latex/pxfonts/upxsyc.fd
 File: upxsyc.fd 2000/12/14 v1.0
 )
-LaTeX Info: Redefining \microtypecontext on input line 76.
+LaTeX Info: Redefining \microtypecontext on input line 77.
 Package microtype Info: Generating PDF output.
 Package microtype Info: Character protrusion enabled (level 2).
 Package microtype Info: Using default protrusion set `alltext'.
@@ -1582,7 +1582,7 @@ File: mt-ppl.cfg 2005/11/16 v1.6 microtype config. file: Palatino (RS)
 )
 ABD: EveryShipout initializing macros
 \AtBeginShipoutBox=\box73
-Package hyperref Info: Link coloring OFF on input line 76.
+Package hyperref Info: Link coloring OFF on input line 77.
 
 (/usr/local/texlive/2013/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2012/10/27 v2.43 Cross-referencing by name of section
@@ -1592,9 +1592,9 @@ Package: gettitlestring 2010/12/03 v1.4 Cleanup title references (HO)
 )
 \c@section@level=\count175
 )
-LaTeX Info: Redefining \ref on input line 76.
-LaTeX Info: Redefining \pageref on input line 76.
-LaTeX Info: Redefining \nameref on input line 76.
+LaTeX Info: Redefining \ref on input line 77.
+LaTeX Info: Redefining \pageref on input line 77.
+LaTeX Info: Redefining \nameref on input line 77.
 
 (./paper_ucc.out) (./paper_ucc.out)
 \@outlinefile=\write6
@@ -1669,7 +1669,7 @@ Package caption Info: listings package is loaded.
 Package caption Info: subfigure package is loaded.
 Package caption Info: End \AtBeginDocument code.
 \c@lstlisting=\count182
-LaTeX Font Info:    Try loading font information for T1+pxss on input line 169.
+LaTeX Font Info:    Try loading font information for T1+pxss on input line 170.
 
 (/usr/local/texlive/2013/texmf-dist/tex/latex/pxfonts/t1pxss.fd
 File: t1pxss.fd 2000/12/14 v1.0
@@ -1678,23 +1678,22 @@ Package microtype Info: Loading generic settings for font family
 (microtype)             `pxss' (encoding: T1).
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
-LaTeX Font Info:    Try loading font information for TS1+pxr on input line 169.
+LaTeX Font Info:    Try loading font information for TS1+pxr on input line 170.
 
 
 (/usr/local/texlive/2013/texmf-dist/tex/latex/pxfonts/ts1pxr.fd
 File: ts1pxr.fd 2000/12/14 v1.0
 )
 (./introduction.tex
-Overfull \hbox (239.4016pt too wide) in paragraph at lines 4--4
-[][][][]$\T1/pxr/m/n/7 (-20) http : / / www . independent . co . uk / environme
-nt / global-[]warming-[]data-[]centres-[]to-[]consume-[]three-[]times-[]as-[]mu
-ch-[]energy-[]in-[]next-[]decade-[]experts-[]warn-[]a6830086 .
+Overfull \hbox (1.06673pt too wide) in paragraph at lines 4--4
+\T1/pxr/m/n/7 (-20) -[]consume-[]three-[]times-[]as-[]much-[]energy-[]in-[]next
+-[]decade-[]experts-[]warn-[]a6830086 .
  []
 
 [1.1{/usr/local/texlive/2013/texmf-var/fonts/map/pdftex/updmap/pdftex.map}
 
 ])
-(./section1.tex <Graphs/action_1.pdf, id=103, 722.7pt x 542.025pt>
+(./section1.tex <Graphs/action_1.pdf, id=108, 722.7pt x 542.025pt>
 File: Graphs/action_1.pdf Graphic file (type pdf)
 
 <use Graphs/action_1.pdf>
@@ -1704,7 +1703,7 @@ Package pdftex.def Info: Graphs/action_1.pdf used on input line 10.
 Underfull \vbox (badness 2698) has occurred while \output is active []
 
 
-<Graphs/test_gpaascaler.pdf, id=108, 722.7pt x 542.025pt>
+<Graphs/test_gpaascaler.pdf, id=113, 722.7pt x 542.025pt>
 File: Graphs/test_gpaascaler.pdf Graphic file (type pdf)
 
 <use Graphs/test_gpaascaler.pdf>
@@ -1995,9 +1994,6 @@ Package relsize Warning: Font size 4.86111pt is too small.
 (relsize)                Using 5.0pt instead on input line 60.
 
 [4.4]) (./experiments.tex
-
-Package natbib Warning: Citation `rubis' on page 5 undefined on input line 20.
-
 (/usr/local/texlive/2013/texmf-dist/tex/latex/listings/lstlang1.sty
 File: lstlang1.sty 2004/09/05 1.3 listings language file
 )
@@ -2018,7 +2014,7 @@ nverted-to.pdf Graphs/workload_ucc.eps>
 (epstopdf)             \includegraphics on input line 55.
 Package epstopdf Info: Output file is already uptodate.
 
-<Graphs/workload_ucc-eps-converted-to.pdf, id=298, 389.455pt x 144.54pt>
+<Graphs/workload_ucc-eps-converted-to.pdf, id=305, 389.455pt x 144.54pt>
 File: Graphs/workload_ucc-eps-converted-to.pdf Graphic file (type pdf)
 
 <use Graphs/workload_ucc-eps-converted-to.pdf>
@@ -2030,14 +2026,18 @@ Overfull \hbox (31.46915pt too wide) in paragraph at lines 55--56
  [][] 
  []
 
-<Graphs/implementation_UCC.pdf, id=299, 722.7pt x 542.025pt>
+
+Package natbib Warning: Citation `soodeh' on page 6 undefined on input line 64.
+
+
+<Graphs/implementation_UCC.pdf, id=308, 722.7pt x 542.025pt>
 File: Graphs/implementation_UCC.pdf Graphic file (type pdf)
 
 <use Graphs/implementation_UCC.pdf>
-Package pdftex.def Info: Graphs/implementation_UCC.pdf used on input line 80.
+Package pdftex.def Info: Graphs/implementation_UCC.pdf used on input line 87.
 (pdftex.def)             Requested size: 252.94878pt x 189.71158pt.
 
-Overfull \hbox (11.80128pt too wide) in paragraph at lines 80--81
+Overfull \hbox (11.80128pt too wide) in paragraph at lines 87--88
  [][] 
  []
 
@@ -2051,14 +2051,14 @@ Package epstopdf Info: Source file: <Graphs/responseTime.eps>
 (epstopdf)                    size: 299215 bytes
 (epstopdf)             Command: <repstopdf --outfile=Graphs/responseTime-eps-co
 nverted-to.pdf Graphs/responseTime.eps>
-(epstopdf)             \includegraphics on input line 100.
+(epstopdf)             \includegraphics on input line 107.
 Package epstopdf Info: Output file is already uptodate.
- <Graphs/responseTime-eps-converted-to.pdf, id=348, 289.08pt x 216.81pt>
+ <Graphs/responseTime-eps-converted-to.pdf, id=358, 289.08pt x 216.81pt>
 File: Graphs/responseTime-eps-converted-to.pdf Graphic file (type pdf)
 
 <use Graphs/responseTime-eps-converted-to.pdf>
 Package pdftex.def Info: Graphs/responseTime-eps-converted-to.pdf used on input
- line 100.
+ line 107.
 (pdftex.def)             Requested size: 231.2643pt x 173.44823pt.
 Package epstopdf Info: Source file: <Graphs/percentile.eps>
 (epstopdf)                    date: 2017-08-15 18:54:20
@@ -2068,28 +2068,28 @@ Package epstopdf Info: Source file: <Graphs/percentile.eps>
 (epstopdf)                    size: 13339 bytes
 (epstopdf)             Command: <repstopdf --outfile=Graphs/percentile-eps-conv
 erted-to.pdf Graphs/percentile.eps>
-(epstopdf)             \includegraphics on input line 112.
+(epstopdf)             \includegraphics on input line 119.
 Package epstopdf Info: Output file is already uptodate.
 
-<Graphs/percentile-eps-converted-to.pdf, id=351, 346.29375pt x 266.9975pt>
+<Graphs/percentile-eps-converted-to.pdf, id=361, 346.29375pt x 266.9975pt>
 File: Graphs/percentile-eps-converted-to.pdf Graphic file (type pdf)
 
 <use Graphs/percentile-eps-converted-to.pdf>
 Package pdftex.def Info: Graphs/percentile-eps-converted-to.pdf used on input l
-ine 112.
+ine 119.
 (pdftex.def)             Requested size: 259.71967pt x 200.24762pt.
 
-Overfull \hbox (18.57217pt too wide) in paragraph at lines 112--113
+Overfull \hbox (18.57217pt too wide) in paragraph at lines 119--120
  [][] 
  []
 
 
-Overfull \hbox (28.8192pt too wide) in paragraph at lines 138--147
+Overfull \hbox (28.8192pt too wide) in paragraph at lines 145--154
  [][] 
  []
 
 
-Overfull \hbox (46.8192pt too wide) in paragraph at lines 159--168
+Overfull \hbox (46.8192pt too wide) in paragraph at lines 166--175
  [][] 
  []
 
@@ -2101,20 +2101,22 @@ Package epstopdf Info: Source file: <Graphs/vm.eps>
 (epstopdf)                    size: 7966 bytes
 (epstopdf)             Command: <repstopdf --outfile=Graphs/vm-eps-converted-to
 .pdf Graphs/vm.eps>
-(epstopdf)             \includegraphics on input line 172.
+(epstopdf)             \includegraphics on input line 179.
 Package epstopdf Info: Output file is already uptodate.
-<Graphs/vm-eps-converted-to.pdf, id=358, 317.185pt x 216.81pt>
+<Graphs/vm-eps-converted-to.pdf, id=368, 317.185pt x 216.81pt>
 File: Graphs/vm-eps-converted-to.pdf Graphic file (type pdf)
 
 <use Graphs/vm-eps-converted-to.pdf>
-Package pdftex.def Info: Graphs/vm-eps-converted-to.pdf used on input line 172.
+Package pdftex.def Info: Graphs/vm-eps-converted-to.pdf used on input line 179.
 
 (pdftex.def)             Requested size: 253.74832pt x 173.44823pt.
 
-Overfull \hbox (12.60083pt too wide) in paragraph at lines 172--173
+Overfull \hbox (12.60083pt too wide) in paragraph at lines 179--180
  [][] 
  []
 
+[7.7 <./Graphs/responseTime-eps-converted-to.pdf> <./Graphs/percentile-eps-conv
+erted-to.pdf>]
 Package epstopdf Info: Source file: <Graphs/cost.eps>
 (epstopdf)                    date: 2017-08-15 18:46:08
 (epstopdf)                    size: 21447 bytes
@@ -2123,43 +2125,40 @@ Package epstopdf Info: Source file: <Graphs/cost.eps>
 (epstopdf)                    size: 6235 bytes
 (epstopdf)             Command: <repstopdf --outfile=Graphs/cost-eps-converted-
 to.pdf Graphs/cost.eps>
-(epstopdf)             \includegraphics on input line 189.
+(epstopdf)             \includegraphics on input line 196.
 Package epstopdf Info: Output file is already uptodate.
-<Graphs/cost-eps-converted-to.pdf, id=359, 317.185pt x 216.81pt>
+
+<Graphs/cost-eps-converted-to.pdf, id=393, 317.185pt x 216.81pt>
 File: Graphs/cost-eps-converted-to.pdf Graphic file (type pdf)
 
 <use Graphs/cost-eps-converted-to.pdf>
-Package pdftex.def Info: Graphs/cost-eps-converted-to.pdf used on input line 18
-9.
+Package pdftex.def Info: Graphs/cost-eps-converted-to.pdf used on input line 19
+6.
 (pdftex.def)             Requested size: 222.02797pt x 151.76596pt.
-) (./relatedWork.tex [7.7 <./Graphs/responseTime-eps-converted-to.pdf> <./Graph
-s/percentile-eps-converted-to.pdf>]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [8.8 <./Graphs/vm-eps-converted-to.pdf> <./Graphs/cost-eps-converted-to.pdf>])
-
-(./conclusion.tex) (./paper_ucc.bbl [9.9])
+) (./relatedWork.tex [8.8 <./Graphs/vm-eps-converted-to.pdf> <./Graphs/cost-eps
+-converted-to.pdf>]) (./conclusion.tex)
+(./paper_ucc.bbl [9.9])
 
 Package natbib Warning: There were undefined citations.
 
 [10.10
 
 ]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 183.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 183.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 184.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 184.
  (./paper_ucc.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 183.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 183.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 184.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 184.
 Package rerunfilecheck Info: File `paper_ucc.out' has not changed.
-(rerunfilecheck)             Checksum: 668BB3CC40C3678F97F0A2D58CC737AB;1876.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 183.
+(rerunfilecheck)             Checksum: B22DBD9FE80AA852443049F3F6196945;1983.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 184.
  ) 
 Here is how much of TeX's memory you used:
- 32510 strings out of 493315
- 554619 string characters out of 6137904
- 745775 words of memory out of 5000000
- 34460 multiletter control sequences out of 15000+600000
- 88780 words of font info for 495 fonts, out of 8000000 for 9000
+ 32522 strings out of 493315
+ 554746 string characters out of 6137904
+ 746775 words of memory out of 5000000
+ 34465 multiletter control sequences out of 15000+600000
+ 88977 words of font info for 498 fonts, out of 8000000 for 9000
  1118 hyphenation exceptions out of 8191
  63i,15n,94p,2145b,1459s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2013/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/local/t
@@ -2177,10 +2176,10 @@ local/texlive/2013/texmf-dist/fonts/type1/urw/palatino/uplb8a.pfb></usr/local/t
 exlive/2013/texmf-dist/fonts/type1/urw/palatino/uplbi8a.pfb></usr/local/texlive
 /2013/texmf-dist/fonts/type1/urw/palatino/uplr8a.pfb></usr/local/texlive/2013/t
 exmf-dist/fonts/type1/urw/palatino/uplri8a.pfb>
-Output written on paper_ucc.pdf (10 pages, 787573 bytes).
+Output written on paper_ucc.pdf (10 pages, 788993 bytes).
 PDF statistics:
- 542 PDF objects out of 1000 (max. 8388607)
- 458 compressed objects within 5 object streams
- 157 named destinations out of 1000 (max. 500000)
- 76977 words of extra memory for PDF output out of 89155 (max. 10000000)
+ 554 PDF objects out of 1000 (max. 8388607)
+ 470 compressed objects within 5 object streams
+ 160 named destinations out of 1000 (max. 500000)
+ 76985 words of extra memory for PDF output out of 89155 (max. 10000000)
 

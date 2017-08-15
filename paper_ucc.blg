@@ -34,13 +34,23 @@ Warning--I'm ignoring parasol's extra "title" field
 --line 339 of file bibliography.bib
 Warning--I'm ignoring corentin's extra "title" field
 --line 361 of file bibliography.bib
-You're missing a field name---line 526 of file bibliography.bib
+Warning--string name "june" is undefined
+--line 536 of file bibliography.bib
+You're missing a field name---line 541 of file bibliography.bib
  : 
  : % author = {Fleder, Daniel and Hosanagar, Kartik and Buja, Andreas},
 (Error may have been on previous line)
 I'm skipping whatever remains of this entry
 Reallocated singl_function (elt_size=4) to 100 items from 50.
+Warning--no key, author in rubis
+Warning--no author, editor, organization, or key in rubis
+Warning--to sort, need author or key in rubis
+Warning--no key, author in rubis
+Warning--no key, author in rubis
 Reallocated singl_function (elt_size=4) to 100 items from 50.
+Warning--no key, author in rubis
+Warning--no author, editor, organization, or key in rubis
+Warning--empty author in rubis
 Warning--empty publisher in garlan1
 Warning--empty address in garlan1
 Warning--empty publisher in morin1
@@ -64,45 +74,45 @@ Warning--page numbers missing in both pages and numpages fields in brownout
 Warning--empty publisher in vertical
 Warning--empty address in vertical
 Warning--empty address in GreenWare
-You've used 19 entries,
+You've used 20 entries,
             5758 wiz_defined-function locations,
-            1643 strings with 23084 characters,
-and the built_in function-call counts, 24167 in all, are:
-= -- 2888
+            1648 strings with 23181 characters,
+and the built_in function-call counts, 25191 in all, are:
+= -- 3001
 > -- 1022
 < -- 0
 + -- 327
-- -- 332
-* -- 1860
-:= -- 2453
-add.period$ -- 95
-call.type$ -- 19
-change.case$ -- 153
-chr.to.int$ -- 18
-cite$ -- 42
-duplicate$ -- 2100
-empty$ -- 1468
+- -- 353
+* -- 1934
+:= -- 2515
+add.period$ -- 100
+call.type$ -- 20
+change.case$ -- 157
+chr.to.int$ -- 19
+cite$ -- 55
+duplicate$ -- 2190
+empty$ -- 1537
 format.name$ -- 407
-if$ -- 5799
+if$ -- 6025
 int.to.chr$ -- 2
 int.to.str$ -- 0
 missing$ -- 87
-newline$ -- 205
+newline$ -- 217
 num.names$ -- 151
-pop$ -- 844
+pop$ -- 892
 preamble$ -- 1
-purify$ -- 322
+purify$ -- 335
 quote$ -- 0
-skip$ -- 713
+skip$ -- 742
 stack$ -- 0
-substring$ -- 1672
-swap$ -- 193
-text.length$ -- 0
+substring$ -- 1808
+swap$ -- 198
+text.length$ -- 43
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 469
-warning$ -- 23
-while$ -- 122
+type$ -- 499
+warning$ -- 31
+while$ -- 123
 width$ -- 0
-write$ -- 380
+write$ -- 400
 (There were 6 error messages)

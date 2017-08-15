@@ -61,14 +61,21 @@ and mode 0 provides no recommendation. Popular e-commerce providers provide mult
 machine. It monitors the 95th percentile response
 time by aggregating the Nginx log of LB in each control period \emph{i.e.,} 20 seconds, whereas green energy
 information is pushed by the infrastructure through an API in every 60 seconds. We have set $rt_{thr}$ 80\% and $decWorkPerc$ to 20\% at IaaS controller to evaluate our proposal.
-We took the real traffic pattern of wikipedia german page of one day [22] and scaled the data set to fit with our experiment,
-which is showed at Figure 6. To generate the workload, we used Gatling as load injector and choose an
+We took the real traffic pattern of wikipedia german page of one day \cite{soodeh} and scaled the data set to fit with our experiment,
+which is showed at Figure \ref{fig:workload}. 
+To generate the workload, we used Gatling as load injector and choose an
 open system model, where user requests are issued without
-waiting for other users response from the system. Furthermore,
+waiting for other users response from the system. 
+Furthermore,
 we emulated read-only workload where each user arrives to the homepage, browse any item category from a
 vast catalog, click on a product to extract its information,
 view seller rating and his/her reputation related to the
-product. Furthermore, the duration
+product. 
+We traced the solar energy production that was added to
+the grid for one day (12th April,2016) from EDF,
+France\footnote{http://www.rte-france.com/fr/eco2mix/eco2mix} and scaled the
+values suited for our experiment.
+Furthermore, the duration
 of each experiment was 96min and each was run several
 times. We considered 96min as 24 hours, i.e., each 4min in
 our experiments correspond to 1 hour.
@@ -182,7 +189,7 @@ GE-C & 4796.17 (NA > 18.88\%)(RT-C > 13.96\%) & 1632.77 (NA > 35.11\%) (RT-C > 2
 
 \paragraph{\textbf{Cost analysis}}
 
-Since, our proposed GPaaScaler architecture is agnostic to infrastructure provider and type, it can be plugged on top of public cloud infrastructure. Therefore, we wanted to validate how much each application controller would cost with same application and workload profile. Since, we used large flavor VM's, we fixed instance costs to 0.104 \textdollar
+Since, our proposed GPaaScaler architecture is agnostic to infrastructure provider and type, it can be plugged on top of public cloud infrastructure. Therefore, we wanted to validate how much each application controller would cost with same application and workload profile. Since, we used large flavor VM's, we fixed instance costs to 0.104\textdollar/hour. Since, we considered 4 minutes of duration to 1 hour in our experiment, we calculated the amount of instances and their duration throughout the experiment. We considered partial time spent in the experiment as full instance hour. Figure \ref{fig:cost} shows the cost incurred by all the application controller. GE-C incurred 37.03\% and 21.56\% lesser cost than NA approach and RT-C.
 
 \begin{figure} [htb]
 \centering
@@ -190,3 +197,8 @@ Since, our proposed GPaaScaler architecture is agnostic to infrastructure provid
 \caption{Cost analysis for VM usage}
 \label{fig:cost}
 \end{figure}
+
+\section{Discussion}
+
+
+
