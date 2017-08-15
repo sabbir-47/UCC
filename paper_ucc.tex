@@ -18,6 +18,31 @@
 \usepackage{pifont}
 \usepackage{soul}
 \usepackage{pxfonts}
+\usepackage{listings}
+\lstset{
+backgroundcolor=\color[rgb]{1,1,1},
+  basicstyle=\scriptsize,
+  columns=fullflexible,
+  showstringspaces=false,
+  commentstyle=\color{gray}\upshape,
+  breaklines=true,
+  %frame=single
+  keywordstyle=\color{blue},
+  numbers=left,
+  xleftmargin=5.0ex,
+  numberstyle=\tiny\ttfamily\color{black}
+}
+
+\lstdefinelanguage{XML}{
+  morestring=[b][\color{brown}]",
+%  morestring=[s][\color{red}\bfseries]{>}{<},
+%  morecomment=[s]{<?}{?>},
+  stringstyle=\color{black},
+  identifierstyle=\color{blue},
+  keywordstyle=\color{cyan},
+  escapechar=!,
+  morekeywords={name,use,xmlns,version,type}% list your attributes here,
+}
 
 \newcommand\encircle[1]{%
   \tikz[baseline=(X.base)] 

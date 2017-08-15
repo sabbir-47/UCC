@@ -19,8 +19,31 @@ host VMs, which in turn, are pre-configured to run Ubuntu
 \paragraph*{\textbf{Application Configuration}} We experimented with
 RUBiS application \cite{rubis}, an eBay like auction site, which
 is assumed to be a representative of popular e-commerce application 
-and hence interactive web application. In Brownout \cite{brownout}, authors provided a user-to-user recommendation engine that is not core functionality of service but can enhance user experience. Along with that, we implemented a fairly simple item-to-item recommendation, to offer another level of user experience. The
-simple recommendation engine can be summarized as "Retrieve 10 products from same seller and same product category which has higher or same user bid count with high customer rating". The recommendation is added
+and hence interactive web application. In Brownout \cite{brownout}, authors provided a user-to-user recommendation engine that is not core functionality of service but can enhance user experience. Along with that, we implemented a fairly simple item-to-item recommendation, to offer another level of user experience, which is showed at Listing 1. 
+
+\begin{lstlisting}[language=SQL,caption={SQL statement for the recommender system.}, label={sql}]
+SELECT
+   items1.id
+FROM
+   items AS items1.id
+   JOIN comments AS c ON items1.id = c.item_id
+   JOIN items AS i2 ON items1.category = i2.category
+ WHERE 
+   i2.id = :current_item_id AND
+   items1.nb_of_bids >= i2.item_id AND
+   items1.id != :current_item_id
+ORDER BY rating DESC
+LIMIT 10;   
+\end{lstlisting}
+
+
+The
+simple recommendation engine can be summarized as "Retrieve 10 products from same seller and same product category which has higher or same user bid count with high customer rating". Although both the
+recommendation engines lack the sophistication and worldly complexities, they do
+serve as a reasonable example of providing user experience that a cloud
+application can isolate from core functionality of the service 
+to activate or
+deactivate at runtime. The recommendation is added
 to the item visualisation page and to enable it, we defined
 a function that reads a file, where actuator value is updated
 in each control period and execute the associated modes for
@@ -29,7 +52,7 @@ recommendation one, mode 2 activates both recommendations
 and mode 0 provides no recommendation. Popular e-commerce providers provide multi-level recommendations to their users. Furthermore, the application is deployed with all its tiers \emph{i.e.,} web and database server inside a VM using a LEMP stack\footnote{\url{https://lemp.io/}}. Each application VM and Load-balancer (LB) VM were configured with 4 cores of CPU and 8GB of memory similar to Large flavor VM. Since, we used 2 compute servers, we could use maximum of 6 VM's and minimum at 2 VM's\footnote{1 LB VM and 1 application VM}. 
 
 \begin{figure}[h]
-\includegraphics[scale=.75]{Graphs/workload_ucc.eps}
+\includegraphics[scale=.7]{Graphs/workload_ucc.eps}
 \caption{Workload trace}
 \label{fig:workload} 
 \end{figure}
@@ -158,6 +181,8 @@ GE-C & 4796.17 (NA > 18.88\%)(RT-C > 13.96\%) & 1632.77 (NA > 35.11\%) (RT-C > 2
 %2 GE-C 5.508 (37.03 %) (21.568 %)
 
 \paragraph{\textbf{Cost analysis}}
+
+Since, our proposed GPaaScaler architecture is agnostic to infrastructure provider and type, it can be plugged on top of public cloud infrastructure. Therefore, we wanted to validate how much each application controller would cost with same application and workload profile. Since, we used large flavor VM's, we fixed instance costs to 0.104 \textdollar
 
 \begin{figure} [htb]
 \centering
