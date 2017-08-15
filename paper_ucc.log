@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=pdflatex 2014.4.22)  14 AUG 2017 18:50
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=pdflatex 2014.4.22)  15 AUG 2017 15:18
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1462,11 +1462,12 @@ LaTeX Info: Redefining \not on input line 997.
 LaTeX Info: Redefining \textsquare on input line 1017.
 LaTeX Info: Redefining \openbox on input line 1018.
 )
-No file paper_ucc.aux.
+(./paper_ucc.aux)
 \openout1 = `paper_ucc.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/pxmi/m/it on input line 51.
 LaTeX Font Info:    Try loading font information for OML+pxmi on input line 51.
+
 
 (/usr/local/texlive/2013/texmf-dist/tex/latex/pxfonts/omlpxmi.fd
 File: omlpxmi.fd 2000/12/14 v1.0
@@ -1569,6 +1570,8 @@ Package: gettitlestring 2010/12/03 v1.4 Cleanup title references (HO)
 LaTeX Info: Redefining \ref on input line 51.
 LaTeX Info: Redefining \pageref on input line 51.
 LaTeX Info: Redefining \nameref on input line 51.
+
+(./paper_ucc.out) (./paper_ucc.out)
 \@outlinefile=\write6
 \openout6 = `paper_ucc.out'.
 
@@ -1654,9 +1657,6 @@ LaTeX Font Info:    Try loading font information for TS1+pxr on input line 144.
 (/usr/local/texlive/2013/texmf-dist/tex/latex/pxfonts/ts1pxr.fd
 File: ts1pxr.fd 2000/12/14 v1.0
 )
-
-LaTeX Warning: Reference `TotPages' on page 1 undefined on input line 144.
-
 (./introduction.tex
 Overfull \hbox (239.4016pt too wide) in paragraph at lines 4--4
 [][][][]$\T1/pxr/m/n/7 (-20) http : / / www . independent . co . uk / environme
@@ -1664,80 +1664,20 @@ nt / global-[]warming-[]data-[]centres-[]to-[]consume-[]three-[]times-[]as-[]mu
 ch-[]energy-[]in-[]next-[]decade-[]experts-[]warn-[]a6830086 .
  []
 
-
-Package natbib Warning: Citation `parasol' on page 1 undefined on input line 6.
-
-
-
-Package natbib Warning: Citation `sabbir' on page 1 undefined on input line 6.
-
-
-Package natbib Warning: Citation `GreenSlot' on page 1 undefined on input line 
-15.
-
-
-Package natbib Warning: Citation `GreenHadoop' on page 1 undefined on input lin
-e 15.
-
-
-Package natbib Warning: Citation `cloudcom' on page 1 undefined on input line 1
-8.
-
-
-Package natbib Warning: Citation `tsc' on page 1 undefined on input line 18.
-
-
-Package natbib Warning: Citation `server-cluster' on page 1 undefined on input 
-line 22.
-
-
-Package natbib Warning: Citation `shi' on page 1 undefined on input line 22.
-
-
-Package natbib Warning: Citation `morin1' on page 1 undefined on input line 22.
-
-
-
-Package natbib Warning: Citation `morin2' on page 1 undefined on input line 22.
-
-
-
-Package natbib Warning: Citation `adaptcap' on page 1 undefined on input line 2
-2.
-
 [1.1{/usr/local/texlive/2013/texmf-var/fonts/map/pdftex/updmap/pdftex.map}
 
 ])
-(./section1.tex
-
-Package natbib Warning: Citation `vision' on page 2 undefined on input line 5.
-
-<Graphs/action_1.pdf, id=31, 722.7pt x 542.025pt>
+(./section1.tex <Graphs/action_1.pdf, id=103, 722.7pt x 542.025pt>
 File: Graphs/action_1.pdf Graphic file (type pdf)
- <use Graphs/action_1.pdf>
+
+<use Graphs/action_1.pdf>
 Package pdftex.def Info: Graphs/action_1.pdf used on input line 10.
 (pdftex.def)             Requested size: 231.26872pt x 173.45154pt.
-
-
-LaTeX Warning: Reference `fig:modes' on page 2 undefined on input line 17.
-
-
-LaTeX Warning: Reference `fig:GPaaScaler' on page 2 undefined on input line 17.
-
-
-
-LaTeX Warning: Reference `fig:GPaaScaler' on page 2 undefined on input line 17.
-
-
-
-LaTeX Warning: Reference `fig:GPaaScaler' on page 2 undefined on input line 18.
-
-
 
 Underfull \vbox (badness 2698) has occurred while \output is active []
 
 
-<Graphs/test_gpaascaler.pdf, id=32, 722.7pt x 542.025pt>
+<Graphs/test_gpaascaler.pdf, id=108, 722.7pt x 542.025pt>
 File: Graphs/test_gpaascaler.pdf Graphic file (type pdf)
 
 <use Graphs/test_gpaascaler.pdf>
@@ -1748,22 +1688,7 @@ Overfull \hbox (33.48135pt too wide) in paragraph at lines 26--27
  [][] 
  []
 
-) (./section2.tex
-
-Package natbib Warning: Citation `sabbir' on page 2 undefined on input line 9.
-
-
-Package natbib Warning: Citation `tsc' on page 2 undefined on input line 9.
-
-[2.2 <./Graphs/action_1.pdf>]
-
-LaTeX Warning: Reference `algo:rt_extended' on page 3 undefined on input line 3
-4.
-
-
-LaTeX Warning: Reference `algo:rt_extended' on page 3 undefined on input line 3
-4.
-
+) (./section2.tex [2.2 <./Graphs/action_1.pdf>]
 
 Package relsize Warning: Font size 4.86111pt is too small.
 (relsize)                Using 5.0pt instead on input line 68.
@@ -1838,22 +1763,6 @@ Package relsize Warning: Font size 4.86111pt is too small.
 
 Package relsize Warning: Font size 4.86111pt is too small.
 (relsize)                Using 5.0pt instead on input line 69.
-
-
-Package natbib Warning: Citation `GreenHadoop' on page 3 undefined on input lin
-e 83.
-
-
-LaTeX Warning: Reference `algo:h_green_extended' on page 3 undefined on input l
-ine 87.
-
-
-LaTeX Warning: Reference `algo:h_green_extended' on page 3 undefined on input l
-ine 87.
-
-
-LaTeX Warning: Reference `algo:h_green_extended' on page 3 undefined on input l
-ine 87.
 
 [3.3 <./Graphs/test_gpaascaler.pdf>]
 
@@ -1967,10 +1876,6 @@ provisioning
  []
 
 
-Package natbib Warning: Citation `vertical' on page 4 undefined on input line 1
-0.
-
-
 Package relsize Warning: Font size 4.86111pt is too small.
 (relsize)                Using 5.0pt instead on input line 39.
 
@@ -2062,130 +1967,119 @@ Package relsize Warning: Font size 4.86111pt is too small.
 Package relsize Warning: Font size 4.86111pt is too small.
 (relsize)                Using 5.0pt instead on input line 60.
 
-
-LaTeX Warning: Reference `algo:iaas_controller' on page 4 undefined on input li
-ne 67.
-
-
-LaTeX Warning: Reference `algo:iaas_controller' on page 4 undefined on input li
-ne 69.
-
 [4.4]) (./experiments.tex
-<Graphs/implementation_UCC.pdf, id=159, 722.7pt x 542.025pt>
+
+Package natbib Warning: Citation `rubis' on page 5 undefined on input line 20.
+
+
+Underfull \vbox (badness 3780) has occurred while \output is active []
+
+ [5.5]
+Package epstopdf Info: Source file: <Graphs/workload_ucc.eps>
+(epstopdf)                    date: 2017-08-15 00:18:25
+(epstopdf)                    size: 66292 bytes
+(epstopdf)             Output file: <Graphs/workload_ucc-eps-converted-to.pdf>
+(epstopdf)                    date: 2017-08-15 00:23:54
+(epstopdf)                    size: 25541 bytes
+(epstopdf)             Command: <repstopdf --outfile=Graphs/workload_ucc-eps-co
+nverted-to.pdf Graphs/workload_ucc.eps>
+(epstopdf)             \includegraphics on input line 32.
+Package epstopdf Info: Output file is already uptodate.
+
+<Graphs/workload_ucc-eps-converted-to.pdf, id=285, 389.455pt x 144.54pt>
+File: Graphs/workload_ucc-eps-converted-to.pdf Graphic file (type pdf)
+
+<use Graphs/workload_ucc-eps-converted-to.pdf>
+Package pdftex.def Info: Graphs/workload_ucc-eps-converted-to.pdf used on input
+ line 32.
+(pdftex.def)             Requested size: 256.08432pt x 79.66705pt.
+
+Overfull \hbox (14.93683pt too wide) in paragraph at lines 32--33
+ [][] 
+ []
+
+<Graphs/implementation_UCC.pdf, id=286, 722.7pt x 542.025pt>
 File: Graphs/implementation_UCC.pdf Graphic file (type pdf)
 
 <use Graphs/implementation_UCC.pdf>
-Package pdftex.def Info: Graphs/implementation_UCC.pdf used on input line 13.
+Package pdftex.def Info: Graphs/implementation_UCC.pdf used on input line 56.
 (pdftex.def)             Requested size: 252.94878pt x 189.71158pt.
 
-Overfull \hbox (11.80128pt too wide) in paragraph at lines 13--14
+Overfull \hbox (11.80128pt too wide) in paragraph at lines 56--57
+ [][] 
+ []
+
+Package epstopdf Info: Source file: <Graphs/response_time.eps>
+(epstopdf)                    date: 2017-08-15 02:51:18
+(epstopdf)                    size: 248797 bytes
+(epstopdf)             Output file: <Graphs/response_time-eps-converted-to.pdf>
+
+(epstopdf)                    date: 2017-08-15 15:17:49
+(epstopdf)                    size: 299065 bytes
+(epstopdf)             Command: <repstopdf --outfile=Graphs/response_time-eps-c
+onverted-to.pdf Graphs/response_time.eps>
+(epstopdf)             \includegraphics on input line 73.
+Package epstopdf Info: Output file is already uptodate.
+<Graphs/response_time-eps-converted-to.pdf, id=292, 289.08pt x 216.81pt>
+File: Graphs/response_time-eps-converted-to.pdf Graphic file (type pdf)
+
+<use Graphs/response_time-eps-converted-to.pdf>
+Package pdftex.def Info: Graphs/response_time-eps-converted-to.pdf used on inpu
+t line 73.
+(pdftex.def)             Requested size: 202.35461pt x 151.76596pt.
+Package epstopdf Info: Source file: <Graphs/percentile.eps>
+(epstopdf)                    date: 2017-08-15 04:17:14
+(epstopdf)                    size: 48542 bytes
+(epstopdf)             Output file: <Graphs/percentile-eps-converted-to.pdf>
+(epstopdf)                    date: 2017-08-15 15:17:50
+(epstopdf)                    size: 13306 bytes
+(epstopdf)             Command: <repstopdf --outfile=Graphs/percentile-eps-conv
+erted-to.pdf Graphs/percentile.eps>
+(epstopdf)             \includegraphics on input line 81.
+Package epstopdf Info: Output file is already uptodate.
+
+<Graphs/percentile-eps-converted-to.pdf, id=293, 346.29375pt x 266.9975pt>
+File: Graphs/percentile-eps-converted-to.pdf Graphic file (type pdf)
+
+<use Graphs/percentile-eps-converted-to.pdf>
+Package pdftex.def Info: Graphs/percentile-eps-converted-to.pdf used on input l
+ine 81.
+(pdftex.def)             Requested size: 242.40396pt x 186.89696pt.
+
+Overfull \hbox (1.25647pt too wide) in paragraph at lines 81--82
  [][] 
  []
 
 
-LaTeX Warning: Reference `saas-controller' on page 5 undefined on input line 18
-.
+Overfull \hbox (46.8192pt too wide) in paragraph at lines 110--119
+ [][] 
+ []
 
-
-LaTeX Warning: Reference `fig:implementation' on page 5 undefined on input line
- 18.
-
-
-LaTeX Warning: Reference `fig:implementation' on page 5 undefined on input line
- 18.
-
-[5.5 <./Graphs/implementation_UCC.pdf>]
-
-LaTeX Warning: Reference `fig:implementation' on page 6 undefined on input line
- 20.
-
-
-LaTeX Warning: Reference `fig:implementation' on page 6 undefined on input line
- 20.
-
-) (./relatedWork.tex
-
-Package natbib Warning: Citation `GreenSlot' on page 6 undefined on input line 
-11.
-
-
-Package natbib Warning: Citation `GreenHadoop' on page 6 undefined on input lin
-e 11.
-
-
-Package natbib Warning: Citation `GreenPar' on page 6 undefined on input line 1
-4.
-
-
-Package natbib Warning: Citation `brownout' on page 6 undefined on input line 1
-4.
-
-
-Package natbib Warning: Citation `GreenWare' on page 6 undefined on input line 
-22.
-
-
-Package natbib Warning: Citation `not-easy' on page 6 undefined on input line 2
-2.
-
-
-Package natbib Warning: Citation `shi' on page 6 undefined on input line 29.
-
-
-Package natbib Warning: Citation `adaptcap' on page 6 undefined on input line 3
-0.
-
-
-Package natbib Warning: Citation `corentin' on page 6 undefined on input line 3
-5.
-
-
-Package natbib Warning: Citation `garlan1' on page 6 undefined on input line 35
-.
-
-[6.6]) (./conclusion.tex) (./paper_ucc.bbl
-Underfull \vbox (badness 2698) has occurred while \output is active []
-
-)
+) (./relatedWork.tex [6.6 <./Graphs/workload_ucc-eps-converted-to.pdf> <./Graph
+s/implementation_UCC.pdf> <./Graphs/response_time-eps-converted-to.pdf>]
+[7.7 <./Graphs/percentile-eps-converted-to.pdf>]) (./conclusion.tex)
+(./paper_ucc.bbl)
 
 Package natbib Warning: There were undefined citations.
 
-[7.7]
+[8.8]
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 158.
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 158.
- (./paper_ucc.aux
-
-Package natbib Warning: Citation(s) may have changed.
-(natbib)                Rerun to get citations correct.
-
-)
+ (./paper_ucc.aux)
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 158.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 158.
-
-
-Package rerunfilecheck Warning: File `paper_ucc.out' has changed.
-(rerunfilecheck)                Rerun to get outlines right
-(rerunfilecheck)                or use package `bookmark'.
-
-Package rerunfilecheck Info: Checksums for `paper_ucc.out':
-(rerunfilecheck)             Before: <no file>
-(rerunfilecheck)             After:  10FE19259B4F4EB976A1CF8E761DACBE;2050.
-
-LaTeX Warning: There were undefined references.
-
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
+Package rerunfilecheck Info: File `paper_ucc.out' has not changed.
+(rerunfilecheck)             Checksum: 38F73E1D61C23D76856161EBF7E9D107;1876.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 158.
  ) 
 Here is how much of TeX's memory you used:
- 30532 strings out of 493315
- 528329 string characters out of 6137904
+ 30597 strings out of 493315
+ 529504 string characters out of 6137904
  713854 words of memory out of 5000000
- 32556 multiletter control sequences out of 15000+600000
- 87674 words of font info for 482 fonts, out of 8000000 for 9000
+ 32594 multiletter control sequences out of 15000+600000
+ 88066 words of font info for 488 fonts, out of 8000000 for 9000
  1118 hyphenation exceptions out of 8191
- 63i,15n,94p,2145b,630s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 63i,15n,94p,2145b,628s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2013/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/local/t
 exlive/2013/texmf-dist/fonts/type1/public/pxfonts/pxsy.pfb></usr/local/texlive/
 2013/texmf-dist/fonts/type1/public/pxfonts/pxsyc.pfb></usr/local/texlive/2013/t
@@ -2201,10 +2095,10 @@ local/texlive/2013/texmf-dist/fonts/type1/urw/palatino/uplb8a.pfb></usr/local/t
 exlive/2013/texmf-dist/fonts/type1/urw/palatino/uplbi8a.pfb></usr/local/texlive
 /2013/texmf-dist/fonts/type1/urw/palatino/uplr8a.pfb></usr/local/texlive/2013/t
 exmf-dist/fonts/type1/urw/palatino/uplri8a.pfb>
-Output written on paper_ucc.pdf (7 pages, 431630 bytes).
+Output written on paper_ucc.pdf (8 pages, 769995 bytes).
 PDF statistics:
- 374 PDF objects out of 1000 (max. 8388607)
- 304 compressed objects within 4 object streams
- 130 named destinations out of 1000 (max. 500000)
- 76336 words of extra memory for PDF output out of 89155 (max. 10000000)
+ 494 PDF objects out of 1000 (max. 8388607)
+ 416 compressed objects within 5 object streams
+ 139 named destinations out of 1000 (max. 500000)
+ 76455 words of extra memory for PDF output out of 89155 (max. 10000000)
 

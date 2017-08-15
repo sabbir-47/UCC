@@ -1,0 +1,108 @@
+This is BibTeX, Version 0.99d (TeX Live 2013)
+Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
+The top-level auxiliary file: paper_ucc.aux
+The style file: ACM-Reference-Format.bst
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated wiz_functions (elt_size=4) to 6000 items from 3000.
+Database file #1: bibliography.bib
+You're missing a field name---line 258 of file bibliography.bib
+ : 
+ : %author = {David A. Anisi},
+(Error may have been on previous line)
+I'm skipping whatever remains of this entry
+You're missing a field name---line 267 of file bibliography.bib
+ : 
+ : %  author =       "Kenneth L. Clarkson",
+(Error may have been on previous line)
+I'm skipping whatever remains of this entry
+You're missing a field name---line 279 of file bibliography.bib
+ : 
+ : %  author =       "Harry Thornburg",
+(Error may have been on previous line)
+I'm skipping whatever remains of this entry
+You're missing a field name---line 289 of file bibliography.bib
+ : 
+ : %  author =       "Rafal Ablamowicz and Bertfried Fauser",
+(Error may have been on previous line)
+I'm skipping whatever remains of this entry
+You're missing a field name---line 298 of file bibliography.bib
+ : 
+ : %  author =       "Poker-Edge.Com",
+(Error may have been on previous line)
+I'm skipping whatever remains of this entry
+Warning--I'm ignoring parasol's extra "title" field
+--line 339 of file bibliography.bib
+Warning--I'm ignoring corentin's extra "title" field
+--line 361 of file bibliography.bib
+You're missing a field name---line 526 of file bibliography.bib
+ : 
+ : % author = {Fleder, Daniel and Hosanagar, Kartik and Buja, Andreas},
+(Error may have been on previous line)
+I'm skipping whatever remains of this entry
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Warning--empty publisher in garlan1
+Warning--empty address in garlan1
+Warning--empty publisher in morin1
+Warning--empty address in morin1
+Warning--empty booktitle in corentin
+Warning--empty publisher in corentin
+Warning--page numbers missing in both pages and numpages fields in corentin
+Warning--empty address in not-easy
+Warning--numpages field, but no articleno or eid field, in not-easy
+Warning--empty booktitle in parasol
+Warning--empty address in parasol
+Warning--page numbers missing in both pages and numpages fields in parasol
+Warning--empty address in GreenSlot
+Warning--empty address in GreenHadoop
+Warning--empty publisher in GreenPar
+Warning--empty address in GreenPar
+Warning--empty address in cloudcom
+Warning--page numbers missing in both pages and numpages fields in cloudcom
+Warning--empty address in brownout
+Warning--page numbers missing in both pages and numpages fields in brownout
+Warning--empty publisher in vertical
+Warning--empty address in vertical
+Warning--empty address in GreenWare
+You've used 19 entries,
+            5758 wiz_defined-function locations,
+            1643 strings with 23084 characters,
+and the built_in function-call counts, 24167 in all, are:
+= -- 2888
+> -- 1022
+< -- 0
++ -- 327
+- -- 332
+* -- 1860
+:= -- 2453
+add.period$ -- 95
+call.type$ -- 19
+change.case$ -- 153
+chr.to.int$ -- 18
+cite$ -- 42
+duplicate$ -- 2100
+empty$ -- 1468
+format.name$ -- 407
+if$ -- 5799
+int.to.chr$ -- 2
+int.to.str$ -- 0
+missing$ -- 87
+newline$ -- 205
+num.names$ -- 151
+pop$ -- 844
+preamble$ -- 1
+purify$ -- 322
+quote$ -- 0
+skip$ -- 713
+stack$ -- 0
+substring$ -- 1672
+swap$ -- 193
+text.length$ -- 0
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 469
+warning$ -- 23
+while$ -- 122
+width$ -- 0
+write$ -- 380
+(There were 6 error messages)
