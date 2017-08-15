@@ -29,7 +29,7 @@ recommendation one, mode 2 activates both recommendations
 and mode 0 provides no recommendation. Furthermore, the application is deployed with all its tiers \emph{i.e.,} web and database server inside a VM using a LEMP stack\footnote{\url{https://lemp.io/}}. Each application VM and Load-balancer (LB) VM were configured with 4 cores of CPU and 8GB of memory similar to Large flavor VM. Since, we used 2 compute servers, we could use maximum of 6 VM's and minimum at 2 VM's\footnote{1 LB VM and 1 application VM}. 
 
 \begin{figure}[h]
-\includegraphics[width=9.0 cm, height=2.8 cm]{Graphs/workload_ucc.eps}
+\includegraphics[scale=.75]{Graphs/workload_ucc.eps}
 \caption{Workload trace}
 \label{fig:workload} 
 \end{figure}
@@ -37,7 +37,8 @@ and mode 0 provides no recommendation. Furthermore, the application is deployed 
 \paragraph*{\textbf{Platform and Workload}} Our Proposed platform solution is hosted inside the cloud controller
 machine. It monitors the 95th percentile response
 time by aggregating the Nginx log of LB in each control period \emph{i.e.,} 20 seconds, whereas green energy
-information is pushed by the infrastructure through an API in every 60 seconds. We took the real traffic pattern of wikipedia german page of one day [22] and scaled the data set to fit with our experiment,
+information is pushed by the infrastructure through an API in every 60 seconds. We have set $rt_{thr}$ 80\% and $decWorkPerc$ to 20\% at IaaS controller to evaluate our proposal.
+We took the real traffic pattern of wikipedia german page of one day [22] and scaled the data set to fit with our experiment,
 which is showed at Figure 6. To generate the workload, we used Gatling as load injector and choose an
 open system model, where user requests are issued without
 waiting for other users response from the system. Furthermore,
@@ -66,15 +67,22 @@ But in case of delaying of any event, the scenario will not follow Figure \ref{f
 
 \subsection{Results}
 
-\paragraph*{\textbf{Response time}}
+This section elaborately presents the results obtained during experiment at Grid'5000. We consider a baseline approach \emph{i.e.,} non-adaptive controller (NA), which lacks the capability of application adaptation and rely only on infrastructure adaptation based on response time.
 
+%------------------------------------END-------------------------------------
+
+\paragraph*{\textbf{Response time}}
 \begin{figure} [htb]
 \centering
-\includegraphics[scale=.8]{Graphs/response_time.eps}
+\includegraphics[scale=.8]{Graphs/responseTime.eps}
 \caption{Response time incurred by Controllers}
 \label{fig:rt}
 \end{figure}
+In Figure \ref{fig:rt}, we grouped response time by taking average over seconds. We kept response time set point as 1s. Since, our approach allows both level of adaptation depending on the changing environment, both RT-C and GE-C performed very closely by keeping 99th percentile response time around 274ms and 388ms. Figure \ref{fig:perc} shows the distribution of response time. Although, the baseline approach lacked application adaptation, it kept the 99th percentile response time around 500ms. On average, 3.7 million requests were injected during every experiment and only 7-20 requests failed for RT-C and 70-100 requests failed for GE-C. Therefore, both the controller ensure availability to five 9's (99.999\%)
 
+%NA-.473
+%GT-C-.388
+%Rt-.274
 
 \begin{figure} [htb]
 \centering
@@ -83,21 +91,19 @@ But in case of delaying of any event, the scenario will not follow Figure \ref{f
 \label{fig:perc}
 \end{figure}
 
+
+
+
+
+%----------------------------END-------------------------------------
+
 \paragraph*{\textbf{Energy Consumption}}
 
-%\begin{table*}
-%  \caption{Some Typical Commands}
-%  \label{tab:commands}
-%  \begin{tabular}{ccl}
-%    \toprule
-%    Command &A Number & Comments\\
-%    \midrule
-%    \texttt{{\char'134}author} & 100& Author \\
-%    \texttt{{\char'134}table}& 300 & For tables\\
-%    \texttt{{\char'134}table*}& 400& For wider tables\\
-%    \bottomrule
-%  \end{tabular}
-%\end{table*}
+In our experiment, each 4 minutes were considered as an
+hour, thus we calculated the energy consumption of 24
+hours, impacted by each controller, which is presented at
+Table \ref{tab:watt1} and \ref{tab:watt2}. Each experiment was run several times and we found the energy consumption difference between each run
+was 1$\sim$2 watts. At first, we scaled down the wikipedia workload to test the application controllers with static infrastructure, that is, in any given time application controllers were unable to use underlying elastic infrastructure. Table \ref{tab:watt1} summarizes that, GE-C can reduce brown energy consumption by 9.02\% and 6.4\% compared to NA and RT-C, while total energy consumption was reduced by 6.53\% and 6.4\% respectively.  
 
 
 %Total: 5912.49
@@ -105,19 +111,54 @@ But in case of delaying of any event, the scenario will not follow Figure \ref{f
 %Brown: 2516.59
 
 \begin{table*}
-\caption{Energy Consumption in Watts}
-  \label{tab:watt}
+\caption{Energy Consumption in Watts (Application adaptation)}
+  \label{tab:watt1}
+\begin{tabular}{cccl}
+\toprule
+Controller & Total Energy Consumption & Brown Energy Consumption & Green Energy Consumption\\
+\midrule
+Non-Adaptive & 3424.20 & 1934.66 & 1484.54 \\
+RT-C & 3493.93 & 1975.18 & 1518.75  \\  %&1446.01 & 1941.32 & 3387.33 & --\\ \hline
+GE-C & 3270.20 (NA > 6.53\%)(RT-C > 6.4\%) & 1760.09 (NA > 9.02\%) (RT-C > 10.88\%) & 1510.11 (NA < 1.2\%)\textcolor{red}{( RT-C > 0.50\%)} \\
+\bottomrule
+\end{tabular}
+\end{table*}
+
+%Rt & 3493.93 & 1975.18 & 1518.75  \\ \hline %&1446.01 & 1941.32 & 3387.33 & --\\ \hline
+%Hybrid-Green & 3270.20 (6.4\%) & 1760.09 (10.88\%) & 1510.11 \alert{(0.50\%)} \\\hline
+
+\begin{table*}
+\caption{Energy Consumption in Watts (Application and Infrastructure adaptation)}
+  \label{tab:watt2}
 \begin{tabular}{cccl}
 \toprule
 Controller & Total Energy Consumption & Brown Energy Consumption & Green Energy Consumption\\
 \midrule
 Non-Adaptive & 5912.49 & 2516.59 & 3395.9 \\
 RT-C & 5574.78 & 2226.16 & 3348.62  \\  %&1446.01 & 1941.32 & 3387.33 & --\\ \hline
-GE-C & 4796.17 (NA > 18.88\%)(RT-C > 13.96\%) & 1632.77 (NA > 35.11\%) (RT-C > 26.65\%) & 3163.4 \textcolor{red}{(NA < 6.83\%)( RT-C < 5.53\%)} \\
+GE-C & 4796.17 (NA > 18.88\%)(RT-C > 13.96\%) & 1632.77 (NA > 35.11\%) (RT-C > 26.65\%) & 3163.4 \textcolor{red}{(NA > 6.83\%)( RT-C > 5.53\%)} \\
 \bottomrule
 \end{tabular}
 \end{table*}
 
+\begin{figure} [htb]
+\centering
+\includegraphics[scale=.8]{Graphs/vm.eps}
+\caption{Number of VM usage during experiment}
+\label{fig:vm}
+\end{figure}
+
+%----------------------------------END-------------------------------------
+
+%0 Non-adaptive 8.748
+%1 RT-C 6.696 (23.45 %)
+%2 GE-C 5.508 (37.03 %) (21.568 %)
+
 \paragraph{\textbf{Cost analysis}}
 
-
+\begin{figure} [htb]
+\centering
+\includegraphics[scale=.7]{Graphs/cost.eps}
+\caption{Cost analysis for VM usage}
+\label{fig:vm}
+\end{figure}
