@@ -1,7 +1,9 @@
 \section{Conclusion}
 
-This section presents our auto-scaler architecture named \emph{GPaaScaler}, which continuously listens the instances of events \emph{e.g.,} response time, green energy availability, working modes of application etc., pushed by SaaS and IaaS in a changing environment. Furthermore, it inherits the capability to actuate both at application and at infrastructure level.
-We use the most popular self-adaptive design framework: Monitor-Analyze-Plan-
-Execute-Knowledge (MAPE-K) loop [16] for our auto-scaler.
-Our contribution lies on the \emph{analyze} and \emph{plan} (A-P) block of this autonomic framework.
+In this article, we proposed a green energy aware platform that creates awareness around interactive Cloud application and formulate strategy to understand when to trigger scaling decision based on reactive and pro-active scaling rules. Secondly, we use traditional API such as \emph{scale-in} and \emph{scale-out} to trigger decision based on the strategy we have devised. Later we validated our approach by extensive experiments and results obtained over Grid'5000 test bed. Results showed that, significant amount of brown energy and cost reduction is possible if application can be adapted based on green energy availability.
+
+For future work, we want to leverage micro-service architecture of an application to adapt itself in the presence of green energy. It would be interesting to deploy small and decoupled units of the application
+throughout different containers (rather than VM) so that, each of the application component if required, can be scaled to guarantee better performance, self healing capabilities. Apart from that, resource can be assigned to specific components where it is required, thus over-provisioning of resource phenomena can be avoided resulting lesser energy consumption. Additionally, this investigation can leads to a decentralized autonomic behavior in modern
+application. Therefore, we believe that, this area of research
+investigation can open the door of automating fully decentralized cloud application.
 

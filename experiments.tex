@@ -52,7 +52,7 @@ recommendation one, mode 2 activates both recommendations
 and mode 0 provides no recommendation. Popular e-commerce providers provide multi-level recommendations to their users. Furthermore, the application is deployed with all its tiers \emph{i.e.,} web and database server inside a VM using a LEMP stack\footnote{\url{https://lemp.io/}}. Each application VM and Load-balancer (LB) VM were configured with 4 cores of CPU and 8GB of memory similar to Large flavor VM. Since, we used 2 compute servers, we could use maximum of 6 VM's and minimum at 2 VM's\footnote{1 LB VM and 1 application VM}. 
 
 \begin{figure}[h]
-\includegraphics[scale=.7]{Graphs/workload_ucc.eps}
+\includegraphics[scale=.65]{Graphs/workload_ucc.eps}
 \caption{Workload trace}
 \label{fig:workload} 
 \end{figure}
@@ -200,5 +200,21 @@ Since, our proposed GPaaScaler architecture is agnostic to infrastructure provid
 
 \section{Discussion}
 
-
+After extensively analyzing both the controllers that we have
+designed, it’s evident that the hybrid GE-C can outperform
+RT-C and NA in terms of energy reduction
+and cost gains. In terms of performance, both the controller performs at the same level. We have investigated that, it takes approximately
+5-6 seconds for the application to be stabilized
+with desired behavior after the application reconfiguration decision is
+triggered via SaaS actuator. That suggests, if we fix the control time very
+small, the controller can take decisions before the system has
+been impacted by last control decision. Therefore, the safety
+time is required for a system to be evolved to a desired
+state. Furthermore, activating control loop more frequently
+can increase the overhead of the system by accumulating
+information from system logs. In case of infrastructure, stabilization occurred after 15-20 seconds. 
+Although GE-C can provide lesser recommendations/optional components which can be "nice-to-have" component,
+SaaS providers can take advantage of
+this controller to propose new class of SLA to eco-friendly
+customer who are willing to involve in reducing energy consumption. Moreover, GE-C controller can help SaaS provider for cost reduction. Although, with the change of workload and green energy profile, the values and numbers we have provided might change, but the tendency of the result will remain similar.
 

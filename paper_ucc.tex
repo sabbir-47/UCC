@@ -75,7 +75,7 @@ backgroundcolor=\color[rgb]{1,1,1},
 
 
 \begin{document}
-\title{GPaaScaler : Towards Green Energy Aware Scalable Cloud Platform}
+\title{GPaaScaler: Green Energy aware Platform Scaler for Interactive Cloud Application}
 %\titlenote{Produces the permission block, and
 %  copyright information}
 %\subtitle{Extended Abstract}
@@ -91,7 +91,7 @@ backgroundcolor=\color[rgb]{1,1,1},
   \streetaddress{}
   \city{Nantes} 
   \state{France} 
-  \postcode{77}
+  \postcode{44000}
 }
 \email{sabbir.hasan@inria.fr}
 
@@ -102,7 +102,7 @@ backgroundcolor=\color[rgb]{1,1,1},
   \streetaddress{}
   \city{Nantes} 
   \state{France} 
-  \postcode{}
+  \postcode{44000}
 }
 \email{frederico.alvares@inria.fr}
 
@@ -124,7 +124,24 @@ backgroundcolor=\color[rgb]{1,1,1},
 
 
 \begin{abstract}
-This chapter is an ongoing investigation on how to efficiently utilize the elasticity nature of the infrastructure resources when overall resource requirement of an application is higher than the existing underlying infrastructure can handle. Actions like adding/removing resource can be done independently at the infrastructure layer based on their utilization level \emph{i.e.,} cpu usage, memory usage etc. But, every application performs differently from one another at same cpu utilization level, specially when the resource utilization is medium to high. Therefore, coordinating the decision based on applications resource requirement or performance is the better way to devise scaling strategies. To this, firstly we propose to listen events from application to understand when to trigger scaling decision based on reactive and pro-active scaling rules. Secondly, we use traditional API such as \emph{scale-in} and \emph{scale-out} to trigger decision based on the strategy we have devised. Later we want to validate our approach by extensive experiments and results obtained over Grid'5000 test bed. \textcolor{red}{****Rewrite Abstract*****}
+%This chapter is an ongoing investigation on how to efficiently utilize the elasticity nature of the infrastructure resources when overall resource requirement of an application is higher than the existing underlying infrastructure can handle. Actions like adding/removing resource can be done independently at the infrastructure layer based on their utilization level \emph{i.e.,} cpu usage, memory usage etc. But, every application performs differently from one another at same cpu utilization level, specially when the resource utilization is medium to high. Therefore, coordinating the decision based on applications resource requirement or performance is the better way to devise scaling strategies. To this, firstly we propose to listen events from application to understand when to trigger scaling decision based on reactive and pro-active scaling rules. Secondly, we use traditional API such as \emph{scale-in} and \emph{scale-out} to trigger decision based on the strategy we have devised. Later we want to validate our approach by extensive experiments and results obtained over Grid'5000 test bed. \textcolor{red}{****Rewrite Abstract*****}
+
+Recently, smart usage of renewable energy has been a hot topic in the Cloud
+community. In this vein, we have recently proposed the creation of green energy awareness
+around \textit{Interactive Cloud Applications}, but in static amount of underlying
+resources.
+This paper adds to previous ones as it considers elastic underlying infrastructure, that is, 
+we propose a PaaS solution which efficiently utilize the
+elasticity nature at both infrastructure and application levels, by leveraging
+adaptation in facing  to changing condition i.e., workload burst, performance
+degradation, quality of energy, etc. 
+While applications are adapted by dynamically re-configuring their service 
+level based on performance and/or green energy availability, the infrastructure 
+takes care of addition/removal of resources based on 
+application's resource demand. Both adaptive behaviors are implemented in separated
+modules and are coordinated in a sequential manner. 
+We validate our approach by extensive experiments and results obtained over
+Grid'5000 test bed. Results show that, application can reduce brown energy consumption by 35\% and daily instance hour cost by 37\% compared to a baseline approach when green aware adaptation is considered.
 \end{abstract}
 
 %
@@ -132,38 +149,38 @@ This chapter is an ongoing investigation on how to efficiently utilize the elast
 % http://dl.acm.org/ccs.cfm
 % Please copy and paste the code instead of the example below. 
 %
-\begin{CCSXML}
-<ccs2012>
- <concept>
-  <concept_id>10010520.10010553.10010562</concept_id>
-  <concept_desc>Computer systems organization~Embedded systems</concept_desc>
-  <concept_significance>500</concept_significance>
- </concept>
- <concept>
-  <concept_id>10010520.10010575.10010755</concept_id>
-  <concept_desc>Computer systems organization~Redundancy</concept_desc>
-  <concept_significance>300</concept_significance>
- </concept>
- <concept>
-  <concept_id>10010520.10010553.10010554</concept_id>
-  <concept_desc>Computer systems organization~Robotics</concept_desc>
-  <concept_significance>100</concept_significance>
- </concept>
- <concept>
-  <concept_id>10003033.10003083.10003095</concept_id>
-  <concept_desc>Networks~Network reliability</concept_desc>
-  <concept_significance>100</concept_significance>
- </concept>
-</ccs2012>  
-\end{CCSXML}
+%\begin{CCSXML}
+%<ccs2012>
+% <concept>
+%  <concept_id>10010520.10010553.10010562</concept_id>
+%  <concept_desc>Computer systems organization~Embedded systems</concept_desc>
+%  <concept_significance>500</concept_significance>
+% </concept>
+% <concept>
+%  <concept_id>10010520.10010575.10010755</concept_id>
+%  <concept_desc>Computer systems organization~Redundancy</concept_desc>
+%  <concept_significance>300</concept_significance>
+% </concept>
+% <concept>
+%  <concept_id>10010520.10010553.10010554</concept_id>
+%  <concept_desc>Computer systems organization~Robotics</concept_desc>
+%  <concept_significance>100</concept_significance>
+% </concept>
+% <concept>
+%  <concept_id>10003033.10003083.10003095</concept_id>
+%  <concept_desc>Networks~Network reliability</concept_desc>
+%  <concept_significance>100</concept_significance>
+% </concept>
+%</ccs2012>  
+%\end{CCSXML}
+%
+%\ccsdesc[500]{Computer systems organization~Embedded systems}
+%\ccsdesc[300]{Computer systems organization~Redundancy}
+%\ccsdesc{Computer systems organization~Robotics}
+%\ccsdesc[100]{Networks~Network reliability}
+%
 
-\ccsdesc[500]{Computer systems organization~Embedded systems}
-\ccsdesc[300]{Computer systems organization~Redundancy}
-\ccsdesc{Computer systems organization~Robotics}
-\ccsdesc[100]{Networks~Network reliability}
-
-
-\keywords{ACM proceedings, \LaTeX, text tagging}
+\keywords{Interactive Cloud application, PaaS, Energy consumption, Autonomic computing, Green IT, Sustainable computing}
 
 %\acmBadgeR{artifacts_available}
 
