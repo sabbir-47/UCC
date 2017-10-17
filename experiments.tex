@@ -1,6 +1,6 @@
 \section{Evaluation}
-In this section, we present the evaluation results of proposed SaaS and IaaS controller and their impact on cloud based application
-in terms of response time and energy consumption. The goal is to advocate the benefits
+In this section, we present the evaluation results of proposed SaaS and IaaS controllers and their impact on cloud based application
+in terms of response time, energy consumption and cost. The goal is to advocate the benefits
 and limitations of each controller while experimenting
 with real cloud application and real workload traces.
 
@@ -13,13 +13,13 @@ RAM, running Linux 2.6. Openstack Liberty was used
 as platform, which requires one dedicated physical machine
 for the cloud controller management system. Consequently,
 the other physical machines were used as compute nodes to
-host VMs, which in turn, are pre-configured to run Ubuntu
+host VMs, which in turn, were pre-configured to run Ubuntu
 12.04.
 
 \paragraph*{\textbf{Application Configuration}} We experimented with
 RUBiS application \cite{rubis}, an eBay like auction site, which
 is assumed to be a representative of popular e-commerce application 
-and hence interactive web application. In Brownout \cite{brownout}, authors provided a user-to-user recommendation engine that is not core functionality of service but can enhance user experience. Along with that, we implemented a fairly simple item-to-item recommendation, to offer another level of user experience, which is showed at Listing 1. 
+and hence interactive web application. In Brownout \cite{brownout}, authors provided a user-to-user recommendation engine that is not core functionality of the service but can enhance user experience. Along with that, we implemented a fairly simple item-to-item recommendation, to offer another level of user experience, which is showed at Listing 1. 
 
 \begin{lstlisting}[language=SQL,caption={SQL statement for the recommender system.}, label={sql}]
 SELECT
@@ -37,8 +37,7 @@ LIMIT 10;
 \end{lstlisting}
 
 
-The
-simple recommendation engine can be summarized as "Retrieve 10 products from same seller and same product category which has higher or same user bid count with high customer rating". Although both the
+The simple recommendation engine can be summarized as "Retrieve 10 products from same seller and same product category which have higher or same user bid count with higher customer rating". Although both the
 recommendation engines lack the sophistication and worldly complexities, they do
 serve as a reasonable example of providing user experience that a cloud
 application can isolate from core functionality of the service 
@@ -49,7 +48,7 @@ a function that reads a file, where actuator value is updated
 in each control period and execute the associated modes for
 each user request. For instance, Mode 1 activates the codes of
 recommendation one, mode 2 activates both recommendations
-and mode 0 provides no recommendation. Popular e-commerce providers provide multi-level recommendations to their users. Furthermore, the application is deployed with all its tiers \emph{i.e.,} web and database server inside a VM using a LEMP stack\footnote{\url{https://lemp.io/}}. Each application VM and Load-balancer (LB) VM were configured with 4 cores of CPU and 8GB of memory similar to Large flavor VM. Since, we used 2 compute servers, we could use maximum of 6 VMs and minimum at 2 VMs\footnote{1 LB VM and 1 application VM}. 
+and mode 0 provides no recommendation. Furthermore, the application is deployed with all its tiers \emph{i.e.,} web and database server inside a VM using a LEMP stack\footnote{\url{https://lemp.io/}}. Each application VM and Load-balancer (LB) VM were configured with 4 cores of CPU and 8GB of memory similar to Large flavor VM. Since, we used 2 compute servers, we could use maximum of 6 VMs and minimum at 2 VMs\footnote{1 LB VM and 1 application VM}. 
 
 \begin{figure}[h]
 \includegraphics[scale=.65]{Graphs/workload_ucc.eps}
@@ -83,15 +82,17 @@ our experiments correspond to 1 hour.
 
 \subsection{Consideration of delaying event}
 
+%Thomas remarks about figure 4, Legends have different colors, need to change at home.
+
 \begin{figure} [htb]
 \includegraphics[scale=.35]{Graphs/implementation_UCC.pdf}
 \caption{Algorithm implementation in detail}
 \label{fig:implementation} 
 \end{figure}
 
-From Section \ref{saas-controller}, we see that, \emph{GE-C} controller has inner and outer loops which are activated in different time-scales and push events to the controller to make decision. In our experiments, outer (longer control period) and inner (shorter control period) loops are activated in each 60 seconds and 20 seconds respectively, which is showed in Figure \ref{fig:implementation}. Ideally, if both kinds of events arrive without any delay, two different events will overlap each other. As our motivation is to maximize of green energy usage for \emph{GE-C} controller, we always make primary decision based on the green energy event pushed by IaaS by ignoring the response time event which is activated as inner loop, if both the event arrives concurrently. Concretely, it suggests that, between two big decision events in 60 seconds, we consider only two inner loop events and take actions if it is necessary indicated in Figure \ref{fig:implementation}(a).
+From Section \ref{saas-controller}, we see that, \emph{GE-C} controller has inner and outer loops («handleEvent» blocks) which are activated in different time-scales and push events to the controller to make decision. In our experiments, outer (longer control period) and inner (shorter control period) events arrived at  60 seconds and 20 seconds respectively to the controller, which is showed in Figure \ref{fig:implementation}. Ideally, if both kinds of events arrive without any delay, two different events will overlap each other at some point. As our motivation is to maximize of green energy usage for \emph{GE-C} controller, we always make primary decision based on the green energy event pushed by IaaS by ignoring the response time event which is activated as inner loop, if both the event arrives concurrently. Concretely, it suggests that, between two big decision events in 60 seconds, we consider only two inner loop events and take actions if it is necessary indicated in Figure \ref{fig:implementation}(a).
 
-But in case of delaying of any event, the scenario will not follow Figure \ref{fig:implementation}(a). As discussed before, the primary decision always depends on green energy event. Even though we receive response time event, no action is taken unless the system's response is high. Therefore, in case of delaying of response time event by micro to milliseconds, effects to the system remain almost unchangeable. In contrast, if the event delays by couple of seconds, for instance, inner loop event arrives just before or after the primary decision is made, it might affect the system dynamics to achieve the goal. To tackle the problem, we define a safety distance, denoted by $\delta^t$ to ensure that the controller does not take any action if response time event arrives in between "\textit{PrimaryDecision - $\delta^t$}" and "\textit{PrimaryDecision + $\delta^t$}". Figure \ref{fig:implementation}(b) illustrates the phenomena by an example. For our case, we choose safety distance as, $\delta^t$ = Time frequency of inner loop / $2$, which is equal to 10 seconds in our experiments.
+But in case of delaying of any event, the scenario will not follow Figure \ref{fig:implementation}(a). As discussed before, the primary decision always depends on green energy event. Even though we receive response time event, no action is taken unless the system's response time is high. Therefore, in case of delaying of response time event by micro to milliseconds, effects to the system remain almost unchangeable. In contrast, if the event delays by couple of seconds, for instance, inner loop event arrives just before or after the primary decision is made, it might affect the system dynamics to achieve the goal. To tackle the problem, we define a safety distance, denoted by $\delta^t$ to ensure that the controller does not take any action if response time event arrives in between "\textit{PrimaryDecision - $\delta^t$}" and "\textit{PrimaryDecision + $\delta^t$}". Figure \ref{fig:implementation}(b) illustrates the phenomena by an example. For our case, we choose safety distance as, $\delta^t$ = Time frequency of inner loop / $2$, which is equal to 10 seconds in our experiments.
 
 
 
@@ -104,11 +105,13 @@ This section elaborately presents the results obtained during experiment at Grid
 \paragraph*{\textbf{Response time}}
 \begin{figure} [htb]
 \centering
-\includegraphics[scale=.8]{Graphs/responseTime.eps}
-\caption{Response time incurred by Controllers}
+\includegraphics[scale=.85]{Graphs/responseTime.eps}
+\caption{Response time incurred by application controllers}
 \label{fig:rt}
 \end{figure}
-In Figure \ref{fig:rt}, we grouped response time by taking average over seconds. We kept response time set point as 1s. Since, our approach allows both level of adaptation depending on the changing environment, both RT-C and GE-C performed very closely by keeping 99th percentile response time around 274ms and 388ms. Figure \ref{fig:perc} shows the distribution of response time. Although the baseline approach lacked application adaptation, it kept the 99th percentile response time around 500ms. On average, 3.7 million requests were injected during every experiment and only 7-20 requests failed for RT-C and 70-100 requests failed for GE-C. Therefore, both the controller ensure availability to five 9's (99.999\%).
+In Figure \ref{fig:rt}, we grouped response time by taking average over seconds. We kept response time set point as 1s. Since, our approach allows both level of adaptation depending on the changing environment, both RT-C and GE-C performed very closely by keeping 99th percentile response time around 274ms and 388ms. 
+Figure \ref{fig:perc} shows the distribution of response time for all the controllers. 
+Although the baseline approach lacked application adaptation, it kept the 99th percentile response time around 500ms. On average, 3.7 million requests were injected during every experiment and only 7-20 requests failed for RT-C and 70-100 requests failed for GE-C. Therefore, both the controller ensure availability to five 9's (99.999\%).
 
 %NA-.473
 %GT-C-.388
@@ -116,8 +119,8 @@ In Figure \ref{fig:rt}, we grouped response time by taking average over seconds.
 
 \begin{figure} [htb]
 \centering
-\includegraphics[scale=.75]{Graphs/percentile.eps}
-\caption{Response time in percentiles}
+\includegraphics[scale=.68]{Graphs/ucc2.eps}
+\caption{Response time incurred by application controllers in percentiles}
 \label{fig:perc}
 \end{figure}
 
@@ -127,13 +130,15 @@ In Figure \ref{fig:rt}, we grouped response time by taking average over seconds.
 
 %----------------------------END-------------------------------------
 
+%Talk about table 2
+
 \paragraph*{\textbf{Energy Consumption}}
 
 In our experiment, each 4 minutes were considered as an
 hour, thus we calculated the energy consumption of 24
 hours, impacted by each controller, which is presented at
 Table \ref{tab:watt1} and \ref{tab:watt2}. Each experiment was run several times and we found the energy consumption difference between each run
-was 1$\sim$2 watts. At first, we scaled down the wikipedia workload to test the application controllers with static infrastructure, that is, in any given time application controllers were unable to use underlying elastic infrastructure. Table \ref{tab:watt1} summarizes that, GE-C can reduce brown energy consumption by 9.02\% and 6.4\% compared to NA and RT-C, while total energy consumption was reduced by 6.53\% and 6.4\% respectively. NA was supposed to consume more energy than RT-C since it lacks the capability to adapt application to lower level. Due to the heavy  user requests at some periods, NA approach saturated RUBiS application which was unable to accept any requests which resulted lower availability and lower energy consumption.
+was 1$\sim$2 watts. At first, we scaled down the wikipedia workload to test the application controllers with static infrastructure, that is, in any given time application controllers were unable to use underlying elastic infrastructure. Table \ref{tab:watt1} summarizes that, GE-C can reduce brown energy consumption by 9.02\% and 10.88\% compared to NA and RT-C, while total energy consumption was reduced by 6.53\% and 6.4\% respectively. NA was supposed to consume more energy than RT-C since it lacks the capability to adapt application to lower level. Due to the heavy  user requests at some periods, NA approach saturated RUBiS application which was unable to accept any requests which resulted lower availability and lower energy consumption. Although, GE-C controller consumed 1.2\% more green energy than NA, the amount was 0.50\% less than RT-C controller, (See Table \ref{tab:watt1})
 
 %Total: 5912.49
 %Green: 3395.9
@@ -159,8 +164,8 @@ GE-C & 3270.20  & 1760.09  & 1510.11 \\
 %Rt & 3493.93 & 1975.18 & 1518.75  \\ \hline %&1446.01 & 1941.32 & 3387.33 & --\\ \hline
 %Hybrid-Green & 3270.20 (6.4\%) & 1760.09 (10.88\%) & 1510.11 \alert{(0.50\%)} \\\hline
 
-Afterwards, we proceeded with usual settings with the experiment having infrastructure elasticity capability for all the application controllers. Table \ref{tab:watt2} shows that, GE-C can reduce significant amount of brown energy by 35.11\% and 26.65\% compared to NA approach and RT-C respectively. Interestingly, RT-C consumed less green energy than the other application controllers, although this application controller was designed to consume more green energy than its counterpart application controllers. The reason being that, RT-C activated higher application mode  only in the presence of green energy, irrespective to the amount of user requests. Therefore, if the user requests are lower/higher while few green energy is available the controller activates medium service level mode
- (\emph{i.e.,} mode 1 which activates 1 type of recommendation) and starts activating higher service level (\emph{i.e.,} mode 2 which activates 2 different kinds of recommendation) when the amount of green energy increases. On the other hand, when green energy is scarce, application works at a low service level mode, that is, user can access the system but no recommendation is provided. In this experiment, the user requests started growing when green energy were scarce. Therefore, NA and RT-C both activated more application VMs than GE-C to cope up with the workload, which can be seen at Figure \ref{fig:vm}. Moreover, Figure \ref{fig:vm} shows that, GE-C followed green energy profile very closely while activating application Vms. It was possible due to fact that, we created green energy awareness to the application through \emph{GPaaScaler}. GE-C and RT-C both used maximum of 4 VM's while NA approach used 5 VM's for same workload.
+Afterwards, we proceeded with usual settings with the experiment having infrastructure elasticity capability for all the application controllers. Table \ref{tab:watt2} shows that, GE-C can reduce significant amount of brown energy by 35.11\% and 26.65\% compared to NA approach and RT-C respectively. Interestingly, GE-C consumed less green energy (6.83\% less than NA, 5.53\% less than RT-C) than the other application controllers, although this application controller was designed to consume more green energy than its counterpart application controllers. The reason being that, GE-C activated higher application mode only in the presence of green energy, irrespective to the amount of user requests. Therefore, if the user requests are lower/higher while few green energy is available the controller activates medium service level mode
+ (\emph{i.e.,} mode 1 which activates 1 type of recommendation) and starts activating higher service level (\emph{i.e.,} mode 2 which activates 2 different kinds of recommendation) when the amount of green energy increases. On the other hand, when green energy is scarce, application works at a low service level mode, that is, user can access the system but no recommendation is provided. In this experiment, the user requests started growing when green energy were scarce. Therefore, NA and RT-C both activated more application VMs than GE-C to cope up with the workload, which can be seen at Figure \ref{fig:vm}. Moreover, Figure \ref{fig:vm} shows that, GE-C followed green energy profile very closely while activating application VMs. It was possible due to fact that, we created green energy awareness to the application through \emph{GPaaScaler}. GE-C and RT-C both used maximum of 4 VM's while NA approach used 5 VM's for same workload. The idea behind providing Table \ref{tab:watt1} and Table \ref{tab:watt2} is to show that, by exploiting elasticity capability at infrastructure level, application can reduce brown energy consumption even further.
 
 
 
@@ -195,7 +200,7 @@ GE-C & 4796.17 & 1632.77  & 3163.4  \\
 
 \paragraph{\textbf{Cost analysis}}
 
-Since, our proposed GPaaScaler architecture is agnostic to infrastructure provider and type, it can be plugged on top of public cloud infrastructure. Therefore, we wanted to validate how much each application controller would cost with same application and workload profile. Since, we used large flavor VM's, we fixed instance costs to 0.104\textdollar/hour. Since, we considered 4 minutes of duration to 1 hour in our experiment, we calculated the amount of instances and their duration throughout the experiment. We considered partial time spent in the experiment as full instance hour. Figure \ref{fig:cost} shows the cost incurred by all the application controller. GE-C incurred 37.03\% and 21.56\% lesser cost than NA approach and RT-C.
+Since, our proposed GPaaScaler architecture is agnostic to infrastructure provider and type, it can be plugged on top of public cloud infrastructure. Therefore, we wanted to validate how much each application controller would cost with same application and workload profile. Since, we used large flavor VM's, we fixed instance costs to 0.104\textdollar/hour. Moreover, we considered 4 minutes of duration to 1 hour in our experiment, we calculated the amount of instances and their duration throughout the experiment. We considered partial time spent in the experiment as full instance hour. Figure \ref{fig:cost} shows the cost incurred by all the application controller. GE-C incurred 37.03\% and 21.56\% lesser cost than NA approach and RT-C.
 
 \begin{figure} [htb]
 \centering
@@ -207,7 +212,7 @@ Since, our proposed GPaaScaler architecture is agnostic to infrastructure provid
 \section{Discussion}
 
 After extensively analyzing both the controllers that we have
-designed, it’s evident that the hybrid GE-C can outperform
+designed, it’s evident that the GE-C can outperform
 RT-C and NA in terms of energy reduction
 and cost gains. In terms of performance, both the controller performs at the same level. We have investigated that, it takes approximately
 5-6 seconds for the application to be stabilized
@@ -222,5 +227,5 @@ information from system logs. In case of infrastructure, stabilization occurred 
 Although GE-C can provide lesser recommendations/optional components which can be "nice-to-have" component,
 SaaS providers can take advantage of
 this controller to propose new class of SLA to eco-friendly
-customer who are willing to involve in reducing energy consumption. Moreover, GE-C controller can help SaaS provider for cost reduction. Although, with the change of workload and green energy profile, the values and numbers we have provided might change, but the tendency of the result will remain similar.
+customers who are willing to involve in reducing energy consumption. Moreover, GE-C controller can help SaaS provider to reduce costs by using fewer instances/hours from Public Cloud. Additionally, IaaS provider will be benefited for hosting these applications, since the applications will be able to consume energy smartly. In the Result Section, Table \ref{tab:watt2} showed that, Green energy consumption for GE-C was slightly lower than the other controller. In contrast, GE-C reduced significant amount of Brown energy, thus the \emph{Green-to-Brown} energy ratio can be increased, as well as carbon footprint can be reduced. Although, with the change of workload and green energy profile, the values and numbers we have provided might change, but the tendency of the result will remain similar.
 
