@@ -32,8 +32,6 @@ You're missing a field name---line 298 of file bibliography.bib
 I'm skipping whatever remains of this entry
 Warning--I'm ignoring parasol's extra "title" field
 --line 339 of file bibliography.bib
-Warning--I'm ignoring corentin's extra "title" field
---line 361 of file bibliography.bib
 Warning--string name "june" is undefined
 --line 536 of file bibliography.bib
 You're missing a field name---line 541 of file bibliography.bib
@@ -55,9 +53,10 @@ Warning--empty publisher in garlan1
 Warning--empty address in garlan1
 Warning--empty publisher in morin1
 Warning--empty address in morin1
-Warning--empty booktitle in corentin
 Warning--empty publisher in corentin
 Warning--page numbers missing in both pages and numpages fields in corentin
+Warning--empty publisher in soodeh
+Warning--empty address in soodeh
 Warning--empty address in not-easy
 Warning--numpages field, but no articleno or eid field, in not-easy
 Warning--empty booktitle in parasol
@@ -74,45 +73,45 @@ Warning--page numbers missing in both pages and numpages fields in brownout
 Warning--empty publisher in vertical
 Warning--empty address in vertical
 Warning--empty address in GreenWare
-You've used 20 entries,
+You've used 21 entries,
             5758 wiz_defined-function locations,
-            1648 strings with 23181 characters,
-and the built_in function-call counts, 25191 in all, are:
-= -- 3001
-> -- 1022
+            1654 strings with 23372 characters,
+and the built_in function-call counts, 26553 in all, are:
+= -- 3146
+> -- 1074
 < -- 0
-+ -- 327
-- -- 353
-* -- 1934
-:= -- 2515
-add.period$ -- 100
-call.type$ -- 20
-change.case$ -- 157
-chr.to.int$ -- 19
-cite$ -- 55
-duplicate$ -- 2190
-empty$ -- 1537
-format.name$ -- 407
-if$ -- 6025
++ -- 343
+- -- 369
+* -- 2036
+:= -- 2648
+add.period$ -- 105
+call.type$ -- 21
+change.case$ -- 165
+chr.to.int$ -- 20
+cite$ -- 57
+duplicate$ -- 2322
+empty$ -- 1628
+format.name$ -- 427
+if$ -- 6346
 int.to.chr$ -- 2
 int.to.str$ -- 0
-missing$ -- 87
-newline$ -- 217
-num.names$ -- 151
-pop$ -- 892
+missing$ -- 92
+newline$ -- 226
+num.names$ -- 159
+pop$ -- 943
 preamble$ -- 1
-purify$ -- 335
+purify$ -- 352
 quote$ -- 0
-skip$ -- 742
+skip$ -- 788
 stack$ -- 0
-substring$ -- 1808
-swap$ -- 198
+substring$ -- 1918
+swap$ -- 212
 text.length$ -- 43
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 499
-warning$ -- 31
-while$ -- 123
+type$ -- 529
+warning$ -- 32
+while$ -- 130
 width$ -- 0
-write$ -- 400
+write$ -- 419
 (There were 6 error messages)

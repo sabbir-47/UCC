@@ -101,9 +101,24 @@
   Sheikhalishahi}, \bibinfo{person}{Michele~Facca Federico}, {and}
   \bibinfo{person}{Fabien Hermenier}.} \bibinfo{year}{2015}\natexlab{}.
 \newblock \showarticletitle{An energy aware application controller for
-  optimizing renewable energy consumption in Cloud computing data centres}.
-  \bibinfo{address}{Limassol, Cyprus}.
+  optimizing renewable energy consumption in Cloud computing data centres}. In
+  \bibinfo{booktitle}{{\em 8th IEEE/ACM Int. Conf. on Utility and Cloud
+  Computing}}. \bibinfo{address}{Limassol, Cyprus}.
 \newblock
+
+
+\bibitem[\protect\citeauthoryear{Farokhi, Jamshidi, Lucanin, and
+  Brandic}{Farokhi et~al\mbox{.}}{2015}]%
+        {soodeh}
+\bibfield{author}{\bibinfo{person}{Soodeh Farokhi}, \bibinfo{person}{Pooyan
+  Jamshidi}, \bibinfo{person}{Drazen Lucanin}, {and} \bibinfo{person}{Ivona
+  Brandic}.} \bibinfo{year}{2015}\natexlab{}.
+\newblock \showarticletitle{Performance-Based Vertical Memory Elasticity}. In
+  \bibinfo{booktitle}{{\em IEEE Int. Conf. on Autonomic Computing}}.
+  \bibinfo{pages}{151--152}.
+\newblock
+\showDOI{%
+\url{https://doi.org/10.1109/ICAC.2015.51}}
 
 
 \bibitem[\protect\citeauthoryear{Gao, Curtis, Wong, and Keshav}{Gao

@@ -1,5 +1,6 @@
 \documentclass[sigconf]{acmart}
 
+
 \usepackage{booktabs} % For formal tables
 \usepackage{lmodern}
 \usepackage[T1]{fontenc}
@@ -20,6 +21,17 @@
 \usepackage{pxfonts}
 \usepackage{listings}
 %\usepackage[hyphens]{url}
+
+\usepackage{blindtext}
+
+\usepackage{etoolbox}
+\makeatletter
+\patchcmd{\maketitle}{\@copyrightspace}{}{}{}
+\makeatother
+
+
+
+
 \lstset{
 backgroundcolor=\color[rgb]{1,1,1},
   basicstyle=\scriptsize,
@@ -52,7 +64,7 @@ backgroundcolor=\color[rgb]{1,1,1},
 %\setcopyright{none}
 %\setcopyright{acmcopyright}
 %\setcopyright{acmlicensed}
-\setcopyright{rightsretained}
+%\setcopyright{rightsretained}
 %\setcopyright{usgov}
 %\setcopyright{usgovmixed}
 %\setcopyright{cagov}
@@ -141,7 +153,7 @@ takes care of addition/removal of resources based on
 application's resource demand. Both adaptive behaviors are implemented in separated
 modules and are coordinated in a sequential manner. 
 We validate our approach by extensive experiments and results obtained over
-Grid'5000 test bed. Results show that, application can reduce brown energy consumption by 35\% and daily instance hour cost by 37\% compared to a baseline approach when green aware adaptation is considered.
+Grid'5000 test bed. Results show that, application can reduce significant amount of brown energy consumption by 35\% and daily instance hour cost by 37\% compared to a baseline approach when green energy aware adaptation is considered.
 \end{abstract}
 
 %

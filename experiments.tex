@@ -49,7 +49,7 @@ a function that reads a file, where actuator value is updated
 in each control period and execute the associated modes for
 each user request. For instance, Mode 1 activates the codes of
 recommendation one, mode 2 activates both recommendations
-and mode 0 provides no recommendation. Popular e-commerce providers provide multi-level recommendations to their users. Furthermore, the application is deployed with all its tiers \emph{i.e.,} web and database server inside a VM using a LEMP stack\footnote{\url{https://lemp.io/}}. Each application VM and Load-balancer (LB) VM were configured with 4 cores of CPU and 8GB of memory similar to Large flavor VM. Since, we used 2 compute servers, we could use maximum of 6 VM's and minimum at 2 VM's\footnote{1 LB VM and 1 application VM}. 
+and mode 0 provides no recommendation. Popular e-commerce providers provide multi-level recommendations to their users. Furthermore, the application is deployed with all its tiers \emph{i.e.,} web and database server inside a VM using a LEMP stack\footnote{\url{https://lemp.io/}}. Each application VM and Load-balancer (LB) VM were configured with 4 cores of CPU and 8GB of memory similar to Large flavor VM. Since, we used 2 compute servers, we could use maximum of 6 VMs and minimum at 2 VMs\footnote{1 LB VM and 1 application VM}. 
 
 \begin{figure}[h]
 \includegraphics[scale=.65]{Graphs/workload_ucc.eps}
@@ -60,10 +60,10 @@ and mode 0 provides no recommendation. Popular e-commerce providers provide mult
 \paragraph*{\textbf{Platform and Workload}} Our Proposed platform solution is hosted inside the cloud controller
 machine. It monitors the 95th percentile response
 time by aggregating the Nginx log of LB in each control period \emph{i.e.,} 20 seconds, whereas green energy
-information is pushed by the infrastructure through an API in every 60 seconds. We have set $rt_{thr}$ 80\% and $decWorkPerc$ to 20\% at IaaS controller to evaluate our proposal.
+information is pushed by the infrastructure through an API in every 60 seconds. We have set $rt_{thr}$=80\% and $decWorkPerc$=20\% based on our observation at IaaS controller to evaluate our proposal. 
 We took the real traffic pattern of wikipedia german page of one day \cite{soodeh} and scaled the data set to fit with our experiment,
 which is showed at Figure \ref{fig:workload}. 
-To generate the workload, we used Gatling as load injector and choose an
+To generate the workload, we used Gatling as load injector and chose an
 open system model, where user requests are issued without
 waiting for other users response from the system. 
 Furthermore,
@@ -89,7 +89,7 @@ our experiments correspond to 1 hour.
 \label{fig:implementation} 
 \end{figure}
 
-From Section \ref{saas-controller}, we see that, \emph{GE-C} controller has inner and outer loops which are activated in different time-scales and push events to the controller to make decision. In our experiments, outer (longer control period) and inner (shorter control period) loops are activated in each 60 seconds and 20 seconds respectively, which is showed in Figure \ref{fig:implementation}. Ideally, if both kind of events arrive without any delay, two different events will overlap each other. As our motivation is to maximize of green energy usage for \emph{GE-C} controller, we always make primary decision based on the green energy event pushed by IaaS by ignoring the response time event which is activated as inner loop, if both the event arrives concurrently. Concretely, it suggests that, between two big decision events in 60 seconds, we consider only two inner loop events and take actions if it is necessary indicated in Figure \ref{fig:implementation}(a).
+From Section \ref{saas-controller}, we see that, \emph{GE-C} controller has inner and outer loops which are activated in different time-scales and push events to the controller to make decision. In our experiments, outer (longer control period) and inner (shorter control period) loops are activated in each 60 seconds and 20 seconds respectively, which is showed in Figure \ref{fig:implementation}. Ideally, if both kinds of events arrive without any delay, two different events will overlap each other. As our motivation is to maximize of green energy usage for \emph{GE-C} controller, we always make primary decision based on the green energy event pushed by IaaS by ignoring the response time event which is activated as inner loop, if both the event arrives concurrently. Concretely, it suggests that, between two big decision events in 60 seconds, we consider only two inner loop events and take actions if it is necessary indicated in Figure \ref{fig:implementation}(a).
 
 But in case of delaying of any event, the scenario will not follow Figure \ref{fig:implementation}(a). As discussed before, the primary decision always depends on green energy event. Even though we receive response time event, no action is taken unless the system's response is high. Therefore, in case of delaying of response time event by micro to milliseconds, effects to the system remain almost unchangeable. In contrast, if the event delays by couple of seconds, for instance, inner loop event arrives just before or after the primary decision is made, it might affect the system dynamics to achieve the goal. To tackle the problem, we define a safety distance, denoted by $\delta^t$ to ensure that the controller does not take any action if response time event arrives in between "\textit{PrimaryDecision - $\delta^t$}" and "\textit{PrimaryDecision + $\delta^t$}". Figure \ref{fig:implementation}(b) illustrates the phenomena by an example. For our case, we choose safety distance as, $\delta^t$ = Time frequency of inner loop / $2$, which is equal to 10 seconds in our experiments.
 
@@ -108,7 +108,7 @@ This section elaborately presents the results obtained during experiment at Grid
 \caption{Response time incurred by Controllers}
 \label{fig:rt}
 \end{figure}
-In Figure \ref{fig:rt}, we grouped response time by taking average over seconds. We kept response time set point as 1s. Since, our approach allows both level of adaptation depending on the changing environment, both RT-C and GE-C performed very closely by keeping 99th percentile response time around 274ms and 388ms. Figure \ref{fig:perc} shows the distribution of response time. Although, the baseline approach lacked application adaptation, it kept the 99th percentile response time around 500ms. On average, 3.7 million requests were injected during every experiment and only 7-20 requests failed for RT-C and 70-100 requests failed for GE-C. Therefore, both the controller ensure availability to five 9's (99.999\%).
+In Figure \ref{fig:rt}, we grouped response time by taking average over seconds. We kept response time set point as 1s. Since, our approach allows both level of adaptation depending on the changing environment, both RT-C and GE-C performed very closely by keeping 99th percentile response time around 274ms and 388ms. Figure \ref{fig:perc} shows the distribution of response time. Although the baseline approach lacked application adaptation, it kept the 99th percentile response time around 500ms. On average, 3.7 million requests were injected during every experiment and only 7-20 requests failed for RT-C and 70-100 requests failed for GE-C. Therefore, both the controller ensure availability to five 9's (99.999\%).
 
 %NA-.473
 %GT-C-.388
@@ -148,7 +148,10 @@ Controller & Total Energy Consumption & Brown Energy Consumption & Green Energy 
 \midrule
 Non-Adaptive & 3424.20 & 1934.66 & 1484.54 \\
 RT-C & 3493.93 & 1975.18 & 1518.75  \\  %&1446.01 & 1941.32 & 3387.33 & --\\ \hline
-GE-C & 3270.20 (NA > 6.53\%)(RT-C > 6.4\%) & 1760.09 (NA > 9.02\%) (RT-C > 10.88\%) & 1510.11 (NA < 1.2\%)\textcolor{red}{( RT-C > 0.50\%)} \\
+%GE-C & 3270.20 (NA > 6.53\%)(RT-C > 6.4\%)} & 1760.09 (NA > 9.02\%) (RT-C > 10.88\%) & 1510.11 (NA < 1.2\%)\textcolor{red}{( RT-C > 0.50\%)} \\
+GE-C & 3270.20  & 1760.09  & 1510.11 \\
+  & (NA > 6.53\%)(RT-C > 6.4\%) & (NA > 9.02\%) (RT-C > 10.88\%) & (NA < 1.2\%)\textcolor{red}{( RT-C > 0.50\%)} \\
+
 \bottomrule
 \end{tabular}
 \end{table*}
@@ -156,7 +159,8 @@ GE-C & 3270.20 (NA > 6.53\%)(RT-C > 6.4\%) & 1760.09 (NA > 9.02\%) (RT-C > 10.88
 %Rt & 3493.93 & 1975.18 & 1518.75  \\ \hline %&1446.01 & 1941.32 & 3387.33 & --\\ \hline
 %Hybrid-Green & 3270.20 (6.4\%) & 1760.09 (10.88\%) & 1510.11 \alert{(0.50\%)} \\\hline
 
-Afterwards, we proceeded with usual settings with the experiment having infrastructure elasticity capability for all the application controllers. Table \ref{tab:watt2} shows that, GE-C can reduce significant amount of brown energy by 35.11\% and 26.65\% compared to NA approach and RT-C respectively. Interestingly, RT-C consumed less green energy than the other application controllers, although this application controller was designed to consume more green energy than its counterpart application controllers. The reason being that, RT-C activated higher application mode  only in the presence of green energy, irrespective to the amount of user requests. Therefore, if the user requests are lower/higher while few green energy is available the controller activates medium service level mode (\emph{i.e.,} mode 1 which activates 1 kind of recommendation) and starts activating higher service level(\emph{i.e.,} mode 2 which activates 2 different kind of recommendation) when the amount of green energy increases. On the other hand, when green energy is scarce, application works at a low service level mode, that is, user can access the system but no recommendation is provided. In this experiment, the user requests started growing when green energy were scarce. Therefore, NA and RT-C both activated more application VMs than GE-C to cope up with the workload, which can be seen at Figure \ref{fig:vm}. Moreover, Figure \ref{fig:vm} shows that, GE-C followed green energy profile very closely while activating application Vms. It was possible due to fact that, we created green energy awareness to the application through \emph{GPaaScaler}. GE-C and RT-C both used maximum of 4 VM's while NA approach used 5 VM's for same workload.
+Afterwards, we proceeded with usual settings with the experiment having infrastructure elasticity capability for all the application controllers. Table \ref{tab:watt2} shows that, GE-C can reduce significant amount of brown energy by 35.11\% and 26.65\% compared to NA approach and RT-C respectively. Interestingly, RT-C consumed less green energy than the other application controllers, although this application controller was designed to consume more green energy than its counterpart application controllers. The reason being that, RT-C activated higher application mode  only in the presence of green energy, irrespective to the amount of user requests. Therefore, if the user requests are lower/higher while few green energy is available the controller activates medium service level mode
+ (\emph{i.e.,} mode 1 which activates 1 type of recommendation) and starts activating higher service level (\emph{i.e.,} mode 2 which activates 2 different kinds of recommendation) when the amount of green energy increases. On the other hand, when green energy is scarce, application works at a low service level mode, that is, user can access the system but no recommendation is provided. In this experiment, the user requests started growing when green energy were scarce. Therefore, NA and RT-C both activated more application VMs than GE-C to cope up with the workload, which can be seen at Figure \ref{fig:vm}. Moreover, Figure \ref{fig:vm} shows that, GE-C followed green energy profile very closely while activating application Vms. It was possible due to fact that, we created green energy awareness to the application through \emph{GPaaScaler}. GE-C and RT-C both used maximum of 4 VM's while NA approach used 5 VM's for same workload.
 
 
 
@@ -169,7 +173,9 @@ Controller & Total Energy Consumption & Brown Energy Consumption & Green Energy 
 \midrule
 Non-Adaptive & 5912.49 & 2516.59 & 3395.9 \\
 RT-C & 5574.78 & 2226.16 & 3348.62  \\  %&1446.01 & 1941.32 & 3387.33 & --\\ \hline
-GE-C & 4796.17 (NA > 18.88\%)(RT-C > 13.96\%) & 1632.77 (NA > 35.11\%) (RT-C > 26.65\%) & 3163.4 \textcolor{red}{(NA > 6.83\%)( RT-C > 5.53\%)} \\
+%GE-C & 4796.17 (NA > 18.88\%)(RT-C > 13.96\%) & 1632.77 (NA > 35.11\%) (RT-C > 26.65\%) & 3163.4 \textcolor{red}{(NA > 6.83\%)( RT-C > 5.53\%)} \\
+GE-C & 4796.17 & 1632.77  & 3163.4  \\
+   & (NA > 18.88\%)(RT-C > 13.96\%) & (NA > 35.11\%) (RT-C > 26.65\%) & \textcolor{red}{(NA > 6.83\%)( RT-C > 5.53\%)} \\
 \bottomrule
 \end{tabular}
 \end{table*}
